@@ -1,0 +1,43 @@
+hr {
+    width: 100%;
+    border-width: 2px;
+    margin-left: 15px;
+}
+
+.brand {
+    img {
+        width: 90px;
+    }
+}
+
+.nav-item {
+    width: 100%;
+    overflow: hidden;
+}
+.nav-link.active {
+    font-weight: bold;
+    color: var(--primary);
+}
+.nav-link {
+    color: var(--secondary);
+}
+
+.sidebar-text {
+    font-size: .75rem;
+    padding: 0.15rem 1rem;
+    color: black;
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .navbar {
+        position: absolute;
+        height: 100vh;
+        width: 100%;
+    }
+    .brand {
+        img {
+            width: 120px;
+        }
+    }
+}
