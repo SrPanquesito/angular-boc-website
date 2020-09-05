@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex flex-lg-column align-items-start">
-    <a class="brand py-lg-4 px-lg-2" href="#">
-        <img src="assets/logo-boc-black.png">
+    <a class="brand py-lg-4 px-lg-2" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (mouseover)="hoverBrand=true" (mouseout)="hoverBrand=false">
+        <img src="assets/logo-boc-black.png" [@pulse]="hoverBrand">
     </a>
     <button class="navbar-toggler" type="button">
         <span class="navbar-toggler-icon"></span>
@@ -11,19 +11,19 @@
                 <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/services" routerLinkActive="active">Services</a>
+                <a class="nav-link" routerLink="/services-page" routerLinkActive="active">Services</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/services" routerLinkActive="active">Dr. Miguel G Yee</a>
+                <a class="nav-link" routerLink="/doctors/miguel" routerLinkActive="active">Dr. Miguel G Yee</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/services" routerLinkActive="active">Dr. Lupita Cano</a>
+                <a class="nav-link" routerLink="/doctors/lupita" routerLinkActive="active">Dr. Lupita Cano</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/services" routerLinkActive="active">Dr. Daniel Valenzuela</a>
+                <a class="nav-link" routerLink="/doctors/daniel" routerLinkActive="active">Dr. Daniel Valenzuela</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/services" routerLinkActive="active">Contact Us</a>
+                <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact Us</a>
             </li>
             <li class="nav-item">
                 <hr>
@@ -39,9 +39,15 @@
             </li>
             <li class="nav-item">
                 <div class="nav-link pt-4">
-                    <fa-icon class="pr-3" [icon]="faFacebook" size="lg"></fa-icon>
-                    <fa-icon class="pr-3" [icon]="faInstagram" size="lg"></fa-icon>
-                    <fa-icon class="pr-3" [icon]="faWhatsapp" size="lg"></fa-icon>
+                    <a href="https://www.facebook.com/BajaOralCenter" target="__blank">
+                        <fa-icon class="pr-3" [icon]="faFacebook" size="lg"></fa-icon>
+                    </a>
+                    <a href="https://www.instagram.com/bajaoralcenter" target="__blank">
+                        <fa-icon class="pr-3" [icon]="faInstagram" size="lg"></fa-icon>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=6192705368" target="__blank">
+                        <fa-icon class="pr-3" [icon]="faWhatsapp" size="lg"></fa-icon>
+                    </a>
                 </div>
             </li>
         </ul>
