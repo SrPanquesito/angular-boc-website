@@ -1,13 +1,21 @@
 hr {
-    width: 100%;
-    border-width: 2px;
+    width: 80%;
     margin-left: 15px;
+    border-top: 1px solid #c7b59b;
 }
 
 .brand {
+    :hover {
+        transform: scale(1.05);
+        transition: all 200ms;
+    }
     img {
         width: 90px;
     }
+}
+
+.navbar {
+    border-right: 1px solid #c7b59b;
 }
 
 .nav-item {
@@ -27,15 +35,19 @@ hr {
     }
 }
 .nav-link.active {
-    font-weight: bold;
+    font-weight: 500;
     color: var(--primary);
+
+    padding: 0 0.5rem;
+    border-left: 1px solid #c7b59b;
+    margin: 0.4rem 1rem;
 }
 .nav-link {
     color: var(--secondary);
 }
 
 .sidebar-text {
-    font-size: .75rem;
+    font-size: .7rem;
     padding: 0.15rem 1rem;
     color: black;
 }
@@ -49,7 +61,8 @@ hr {
     }
     .brand {
         img {
-            width: 120px;
+            margin-top: 1rem;
+            width: 130px;
         }
     }
 }
