@@ -2,10 +2,10 @@
     <a class="brand py-lg-4 px-lg-2" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (mouseover)="hoverBrand=true" (mouseout)="hoverBrand=false">
         <img src="assets/logo-boc-black.png" [@pulse]="hoverBrand">
     </a>
-    <button class="navbar-toggler" type="button">
+    <button class="navbar-toggler" type="button" (click)="toggleMenu()">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse mt-3 w-100">
+    <div class="collapse show navbar-collapse mt-3 w-100" [@openCloseMenu]="menu ? 'open' : 'closed'">
         <ul class="nav flex-column align-self-start w-100">
             <li class="nav-item">
                 <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
