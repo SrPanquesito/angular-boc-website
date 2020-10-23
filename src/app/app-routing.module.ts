@@ -7,6 +7,10 @@ import { LupitaComponent } from './doctors/lupita/lupita.component';
 import { DanielComponent } from './doctors/daniel/daniel.component';
 import { ContactComponent } from './contact/contact.component';
 
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faEnvelope, faUser } from '@fortawesome/free-regular-svg-icons';
+import { faPhoneAlt, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'services-page', component: ServicesPageComponent},
@@ -17,8 +21,16 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), FontAwesomeModule],
   exports: [RouterModule],
-  declarations: [ServicesPageComponent, MiguelComponent, LupitaComponent, DanielComponent, ContactComponent]
+  declarations: [HomeComponent, ServicesPageComponent, MiguelComponent, LupitaComponent, DanielComponent, ContactComponent]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+  constructor(library: FaIconLibrary) {
+    // Add an icon to the library for convenient access in other components
+    library.addIcons(faEnvelope);
+    library.addIcons(faPhoneAlt);
+    library.addIcons(faUser);
+    library.addIcons(faMapMarkerAlt);
+  }
+}
