@@ -50,6 +50,15 @@ hr {
     border-top: 1px solid #c7b59b;
 }
 
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    #banner {
+        .main-txt {
+            margin-left: 3rem;
+        }
+    }
+}
+
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
     #banner {

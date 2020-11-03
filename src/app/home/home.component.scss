@@ -79,7 +79,30 @@
     }
 }
 
-@media (max-width: 720px) {
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    #home {
+        &__about {
+            img {
+                z-index: 10;
+                margin-top: 1.5rem;
+                margin-bottom: -1.5rem;
+            }
+
+            .about-box {
+                padding-top: 3rem;
+            }
+            .about-txt {
+                padding: 0rem 3rem;
+            }
+        }
+        &__services {
+            .service-txt {
+                width: 70%;
+            }
+        }
+    }
+
     .section-header {
         h2 {
             padding: 1rem 0;
@@ -91,16 +114,6 @@
 @media (min-width: 992px) {
     #home {
         &__about {
-            img {
-                z-index: 10;
-                margin-top: 1.5rem;
-                margin-bottom: -1.5rem;
-            }
-            
-            .about-box {
-                padding-top: 3rem;
-            }
-    
             .about-txt {
                 width: 80%;
                 padding: 0;
