@@ -7,6 +7,10 @@
 // Bootstrap
 @import "../node_modules/bootstrap/scss/bootstrap";
 
+body {
+    font-family: 'Kumb';
+}
+
 .no-gutters {
     margin-right: 0;
     margin-left: 0;
@@ -39,6 +43,16 @@
         padding: .35rem 2rem;
     }
 }
+// TAREA: Componente aparte.
+#info {
+    .info-box {
+        padding-top: 0;
+    }
+    .info-txt {
+        padding: 1.5rem;
+    }
+}
+
 
 h1 {
     font-weight: 400;
@@ -57,6 +71,21 @@ hr {
             margin-left: 3rem;
         }
     }
+
+    #info {
+        img {
+            z-index: 10;
+            margin-top: 1.5rem;
+            margin-bottom: -1.5rem;
+        }
+
+        .info-box {
+            padding-top: 3rem;
+        }
+        .info-txt {
+            padding: 0rem 3rem;
+        }
+    }
 }
 
 // Large devices (desktops, 992px and up)
@@ -67,6 +96,17 @@ hr {
         .main-txt {
             width: 35%;
             margin-top: 2rem;
+        }
+    }
+
+    #info {
+        .info-txt {
+            width: 80%;
+            padding: 0;
+
+            hr, p {
+                margin-left: 2.5rem;
+            }
         }
     }
 }
