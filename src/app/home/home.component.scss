@@ -1,23 +1,4 @@
 #home {
-    &__banner {
-        background-image: url("src/assets/1200x400.jpg");
-        height: 400px;
-
-        div {
-            width: 100%;
-        }
-
-        .main-txt {
-            margin-left: 2rem;
-            margin-top: 2rem;
-            margin-right: 2rem;
-        }
-
-        button {
-            padding: .35rem 2rem;
-        }
-    }
-
     &__about {
         .about-box {
             padding-top: 0;
@@ -73,17 +54,6 @@
     }
 }
 
-h1 {
-    font-weight: 400;
-    text-align: center;
-}
-
-hr {
-    width: 90%;
-    margin: 1.5rem 0;
-    border-top: 1px solid #c7b59b;
-}
-
 .section-header {
     padding: 4rem 0;
 
@@ -120,12 +90,6 @@ hr {
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
     #home {
-        &__banner {
-            div {
-                width: 50%;
-            }
-        }
-
         &__about {
             img {
                 z-index: 10;
@@ -159,13 +123,6 @@ hr {
         &__features {
             padding: 3rem 6rem;
         }
-    }
-    
-    hr {
-        width: 50%;
-    }
-    h1 {
-        text-align: left;
     }
 
     .section-header {

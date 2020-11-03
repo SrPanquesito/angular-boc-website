@@ -1,0 +1,38 @@
+#services {
+    .service-box {
+        margin: 1.5rem;
+        width: 100%;
+    }
+
+    .service-icon {
+        width: 13%;
+        margin-right: 1rem;
+    }
+}
+
+// Small devices (440px and down)
+@media (max-width: 440px) {
+    hr {
+        width: 80%;
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    #services {
+        .service-box {
+            margin: 2rem;
+            width: 40%;
+        }
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    #services {
+        .service-box {
+            margin: 3rem 3rem 0;
+            width: 25%;
+        }
+    }
+}

@@ -17,3 +17,47 @@
         padding-left: 0;
     }
 }
+
+
+// TAREA: Esto debe de ir en un componente aparte.
+#banner {
+    background-image: url("src/assets/1200x400.jpg");
+    background-size: cover;
+    height: 300px;
+
+    div {
+        width: 100%;
+    }
+
+    .main-txt {
+        margin-left: 2rem;
+        margin-top: 0rem;
+        margin-right: 2rem;
+    }
+
+    button {
+        padding: .35rem 2rem;
+    }
+}
+
+h1 {
+    font-weight: 400;
+}
+
+hr {
+    width: 100%;
+    margin: 1.5rem 0;
+    border-top: 1px solid #c7b59b;
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    #banner {
+        height: 400px;
+
+        .main-txt {
+            width: 35%;
+            margin-top: 2rem;
+        }
+    }
+}
