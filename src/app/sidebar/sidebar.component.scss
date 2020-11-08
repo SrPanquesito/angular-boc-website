@@ -25,14 +25,6 @@ hr {
     :hover {
         color: var(--primary);
     }
-
-    fa-icon {
-        color: var(--secondary);
-    
-        :hover {
-            color: var(--primary);
-        } 
-    }
 }
 .nav-link.active {
     font-weight: 500;

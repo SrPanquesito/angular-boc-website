@@ -80,6 +80,14 @@ p {
     font-size: 15px;
 }
 
+fa-icon {
+    color: var(--secondary);
+
+    :hover {
+        color: var(--primary);
+    } 
+}
+
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
     #banner {
