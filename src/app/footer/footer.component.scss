@@ -1,21 +1,13 @@
 #footer {
     padding: 0 2rem;
-    position: fixed;
-    bottom: -2px;
-    right: 0;
+    bottom: 0;
     z-index: 10;
-    height: 80px;
     background-color: white;
     border-top: 1px solid #c7b59b;
 
     span {
         font-size: .7rem;
-        margin: .6rem 0;
+        margin: 1rem 0;
         color: var(--secondary);
-    }
-
-    // Medium devices (tablets, 768px and up)
-    @media (min-width: 768px) {
-        height: 40px;
     }
 }

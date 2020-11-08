@@ -1,6 +1,6 @@
 hr {
     width: 80%;
-    margin-left: 15px;
+    margin: 1rem 15px 1rem;
     border-top: 1px solid #c7b59b;
 }
 
@@ -46,6 +46,9 @@ hr {
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
+    hr {
+        margin: 1.5rem 15px 1.5rem;
+    }
     .navbar {
         position: absolute;
         height: 100vh;
