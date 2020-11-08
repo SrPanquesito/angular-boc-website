@@ -13,7 +13,8 @@
         .service-txt {
             padding: 3rem;
 
-            h3 {
+            h4 {
+                font-weight: 700;
                 color: #4a88a0;
                 text-align: right;
                 padding-bottom: .5rem;
@@ -29,16 +30,20 @@
         border-top: 1px solid #c7b59b;
         padding: 3rem 0;
 
+        b {
+            font-size: 14px;
+        }
+
         .feature-icon {
             display: block;
             border: 1px solid #c7b59b;
             border-radius: 200px;
-            margin: .75rem 0;
+            margin: .5rem 0;
 
             fa-icon {
                 display: inherit;
-                padding: .2rem .4rem;
-                font-size: 28px;
+                padding: .4rem .4rem 0;
+                font-size: 24px;
                 color: #4799ba;
             }
         }
@@ -48,7 +53,7 @@
 .section-header {
     padding: 4rem 0;
 
-    h2:before {
+    h3:before {
         content: '';
         position: absolute;
         width: 50%;
@@ -56,9 +61,9 @@
         right: -15%;
         margin-left: 50%;
         margin-right: 50%;
-        margin-top: -15px;
+        margin-top: -25px;
     }
-    h2:after {
+    h3:after {
         content: '';
         position: absolute;
         width: 50%;
@@ -81,7 +86,7 @@
     }
 
     .section-header {
-        h2 {
+        h3 {
             padding: 1rem 0;
         }
     }
@@ -95,23 +100,23 @@
                 height: 220px;
             }
             .service-txt {
-                width: 80%;
+                width: 75%;
             }
         }
 
         &__features {
-            padding: 3rem 6rem;
+            padding: 2.5rem 9rem;
         }
     }
 
     .section-header {
         padding: 4rem 0;
     
-        h2:before {
+        h3:before {
             width: 40%;
             right: -10%;
         }
-        h2:after {
+        h3:after {
             height: 60px;
             width: 40%;
             left: -10%;
