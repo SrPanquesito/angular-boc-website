@@ -8,7 +8,7 @@
         <button class="navbar-toggler" type="button" (click)="toggleMenu()">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse show navbar-collapse w-100" [@openCloseMenu]="menu ? 'open' : 'closed'">
+        <div [ngClass]="{'show': menu}" class="collapse navbar-collapse w-100" [@openCloseMenu]="menu ? 'open' : 'closed'">
             <ul class="nav flex-column align-self-start mt-4 w-100">
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
