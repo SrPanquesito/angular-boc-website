@@ -12,16 +12,43 @@
 
 <div id="contact">
     <div class="d-flex flex-column flex-md-row contact-box">
-        <div id="form" class="d-flex justify-content-end">
-            <div class="d-flex flex-column w-100 form-box">
-                <p>Forma</p>
-                <input type="text">
-            </div>
+        <div class="d-flex justify-content-end align-items-center form order-2 order-md-1">
+            <form class="d-flex flex-column form-box">
+                <span>Your name *</span>
+                <input type="text" name="username" class="form-control btn-sm mb-2">
+                <span>Email address *</span>
+                <input type="text" name="email" class="form-control btn-sm mb-2">
+                <span>What can we do for you?</span>
+                <textarea name="message" cols="30" rows="4" class="form-control btn-sm mb-2"></textarea>
+                <div class="d-flex align-items-center justify-content-between py-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="subscribeCheck">
+                        <span for="subscribeCheck">
+                            Subscribe to newsletter
+                        </span>
+                    </div>
+                    <button class="btn btn-dark btn-sm custom-btn-sm" >Send message</button>
+                </div>
+            </form>
         </div>
-        <div id="info" class="d-flex justify-content-start">
-            <div class="d-flex flex-column w-100 info-box">
-                <p>Info</p>
-                <p>Más texto</p>
+        <div class="d-flex justify-content-center align-items-center info order-1 order-md-2">
+            <div class="d-flex flex-column info-box">
+                <h4>Baja Oral Center</h4>
+                <div class="d-flex flex-column py-2">
+                    <span>José Clemente Orozco 10122</span>
+                    <span>Zona Urbana Rio Tijuana</span>
+                    <span>22010 Tijuana, B.C.</span>
+                </div>
+                <div class="d-flex flex-column py-2">
+                    <span><b>Mon - Fri:</b> 9:30am to 5pm</span>
+                    <span><b>Sat:</b> 9am to 3pm</span>
+                    <span><b>Sun:</b> Closed</span>
+                </div>
+                <div class="d-flex flex-column py-2">
+                    <span><b>US:</b> 619-270-5368</span>
+                    <span><b>MX:</b> 664-634-7626</span>
+                </div>
+                <span><b>bajaoralcenter@gmail.com</b></span>
             </div>
         </div>
     </div>

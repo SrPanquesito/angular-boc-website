@@ -1,15 +1,73 @@
 #contact {
     .contact-box {
-        padding: 0 3rem;
+        padding: 2rem;
     }
-}
-#form {
-    width: 60%;
 
-    .form-box {
-        padding: 0 3rem;
+    .form {
+        width: 100%;
+    
+        .form-box {
+            width: 100%;
+
+            span {
+                font-size: 14px;
+                padding: 6px 0;
+                color: var(--secondary);
+            }
+        }
+    }
+    .info {
+        width: 100%;
+    
+        .info-box {
+            width: 100%;
+            padding: 2rem 0;
+
+            span {
+                font-size: 14px;
+                color: var(--secondary);
+            }
+        }
     }
 }
-#info {
-    width: 40%;
+
+.custom-btn-sm {
+    padding: .4rem 1.25rem;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    #contact {
+        .form {
+            margin: 0 1rem;
+        }
+        .info {
+            margin: 0 1rem;
+        }
+    }
+}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    #contact {
+        .contact-box {
+            padding: 2rem 3rem;
+        }
+    
+        .form {
+            width: 50%;
+            margin: 0 2rem;
+        
+            .form-box {
+                width: 80%;
+            }
+        }
+        .info {
+            width: 50%;
+            margin: 0 2rem;
+        
+            .info-box {
+                width: 80%;
+            }
+        }
+    }
 }
