@@ -50,6 +50,10 @@ body {
         margin-left: 2rem;
         margin-top: 0rem;
         margin-right: 2rem;
+
+        img {
+            width: 100%;
+        }
     }
 
     button {
@@ -109,6 +113,10 @@ fa-icon {
 
         .info-box {
             padding-top: 5rem;
+
+            img {
+                width: 90%;
+            }
         }
         .info-txt {
             padding: 0rem 3rem;
@@ -124,6 +132,9 @@ fa-icon {
         .main-txt {
             width: 35%;
             margin-top: 2rem;
+            img {
+                width: 70%;
+            }
         }
     }
 
@@ -131,6 +142,7 @@ fa-icon {
         .info-txt {
             width: 80%;
             padding: 0;
+            padding-top: 2rem;
 
             hr, p {
                 margin-left: 2.5rem;
