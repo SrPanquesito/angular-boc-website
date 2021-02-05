@@ -94,6 +94,13 @@ fa-icon {
     margin-bottom: 6rem;
 }
 
+.fuck {
+    position: fixed;
+    z-index: 50;
+    right: 0;
+    bottom: 0;
+}
+
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
     #banner {

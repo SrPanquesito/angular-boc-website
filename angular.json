@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-boc-website"
+    }
+  },
+  "defaultProject": "angular-boc-website",
+  "cli": {
+    "analytics": "a59871f4-c5a1-4417-9847-4aa69e19e906"
+  }
 }
