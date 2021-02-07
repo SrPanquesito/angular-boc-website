@@ -13,11 +13,12 @@
         }
         .service-txt {
             padding: 3rem;
+            z-index: 1;
 
             h4 {
                 font-weight: 700;
                 color: #4a88a0;
-                text-align: right;
+                text-align: left;
                 padding-bottom: .5rem;
             }
             p {
@@ -82,6 +83,7 @@
         &__services {
             .service-txt {
                 width: 70%;
+                margin: 0 auto;
             }
         }
     }
@@ -101,7 +103,11 @@
                 height: 260px;
             }
             .service-txt {
-                width: 75%;
+                width: 85%;
+                margin: 0;
+                h4 {
+                    font-size: 2rem;
+                }
             }
         }
 

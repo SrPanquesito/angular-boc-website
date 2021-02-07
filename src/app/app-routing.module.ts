@@ -1,3 +1,4 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -6,10 +7,12 @@ import { MiguelComponent } from './doctors/miguel/miguel.component';
 import { LupitaComponent } from './doctors/lupita/lupita.component';
 import { DanielComponent } from './doctors/daniel/daniel.component';
 import { ContactComponent } from './contact/contact.component';
+import { CarouselComponent } from './shared/carousel/carousel.component';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faEnvelope, faUser } from '@fortawesome/free-regular-svg-icons';
 import { faPhoneAlt, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import { MatCarouselModule } from '@ngbmodule/material-carousel';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -21,9 +24,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), FontAwesomeModule],
+  imports: [BrowserModule, RouterModule.forRoot(routes), FontAwesomeModule, MatCarouselModule.forRoot()],
   exports: [RouterModule],
-  declarations: [HomeComponent, ServicesPageComponent, MiguelComponent, LupitaComponent, DanielComponent, ContactComponent]
+  declarations: [HomeComponent, ServicesPageComponent, MiguelComponent, LupitaComponent, DanielComponent, ContactComponent, CarouselComponent]
 })
 export class AppRoutingModule {
   constructor(library: FaIconLibrary) {

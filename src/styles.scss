@@ -1,3 +1,31 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$angular-boc-website-primary: mat-palette($mat-indigo);
+$angular-boc-website-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$angular-boc-website-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$angular-boc-website-theme: mat-light-theme($angular-boc-website-primary, $angular-boc-website-accent, $angular-boc-website-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($angular-boc-website-theme);
+
 /* You can add global styles to this file, and also import other style files */
 
 // Bootstrap Functions
@@ -61,6 +89,14 @@ body {
     }
 }
 // TAREA: Componente aparte.
+#info-home {
+    .info-box {
+        padding-top: 0;
+    }
+    .info-txt {
+        padding: 2rem;
+    }
+}
 #info {
     .info-box {
         padding-top: 0;
@@ -90,8 +126,21 @@ fa-icon {
     } 
 }
 
+.grayscale {
+    filter: grayscale(1);
+}
+.white-out:after {
+    position: absolute;
+    content: '';
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255,255,.6);
+}
 .end {
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
 }
 
 .fuck {
@@ -103,13 +152,17 @@ fa-icon {
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+    .end {
+        margin-bottom: 6rem;
+    }
+
     #banner {
         .main-txt {
             margin-left: 3rem;
         }
     }
 
-    #info {
+    #info-home {
         img {
             z-index: 10;
             margin-top: 1.5rem;
@@ -129,10 +182,34 @@ fa-icon {
             padding: 0rem 3rem;
         }
     }
+    #info {
+        img {
+            z-index: 10;
+            margin-top: 0.5rem;
+            margin-bottom: -2.5rem;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 
+                        0 6px 20px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .info-box {
+            padding-top: 5rem;
+
+            img {
+                width: 70%;
+            }
+        }
+        .info-txt {
+            padding: 0rem 3rem;
+        }
+    }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
+    .end {
+        margin-bottom: 9rem;
+    }
+
     #banner {
         height: 400px;
 
@@ -146,6 +223,10 @@ fa-icon {
     }
 
     #info {
+        img {
+            margin-bottom: -7rem;
+        }
+
         .info-txt {
             width: 80%;
             padding: 0;
@@ -157,3 +238,5 @@ fa-icon {
         }
     }
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
