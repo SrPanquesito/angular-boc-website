@@ -11,21 +11,21 @@ import {
 })
 export class CarouselComponent implements OnInit {
   public slidesList = new Array<never>(5);
-  public showContent = false;
+  public showContent = true;
 
   public timings = '250ms ease-in';
   public autoplay = true;
   public interval = 5000;
   public loop = true;
   public hideArrows = false;
-  public hideIndicators = false;
+  public hideIndicators = true;
   public color: ThemePalette = 'accent';
   public maxWidth = 'auto';
   public maintainAspectRatio = true;
-  public proportion = 25;
+  public proportion = 35;
   public slideHeight = '200px';
   public slides = this.slidesList.length;
-  public overlayColor = '#00000040';
+  public overlayColor = '#00000000';
   public hideOverlay = false;
   public useKeyboard = true;
   public useMouseWheel = false;
