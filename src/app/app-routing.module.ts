@@ -14,6 +14,7 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
 import { faEnvelope, faUser } from '@fortawesome/free-regular-svg-icons';
 import { faPhoneAlt, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { MatCarouselModule } from '@ngbmodule/material-carousel';
+import { AgmCoreModule } from '@agm/core';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -25,7 +26,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [BrowserModule, RouterModule.forRoot(routes), FontAwesomeModule, MatCarouselModule.forRoot(), BrowserAnimationsModule],
+  imports: [BrowserModule, RouterModule.forRoot(routes), FontAwesomeModule, MatCarouselModule.forRoot(), BrowserAnimationsModule, 
+            AgmCoreModule.forRoot({apiKey: 'AIzaSyBIzpYyzXIQYiaVstaBg34wQ2X0ZLz9jiE'})],
   exports: [RouterModule],
   declarations: [HomeComponent, ServicesPageComponent, MiguelComponent, LupitaComponent, DanielComponent, ContactComponent, CarouselComponent]
 })

@@ -52,4 +52,10 @@
             </div>
         </div>
     </div>
+
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+        <agm-marker [latitude]="lat" [longitude]="lng">
+            <agm-info-window>Baja Oral Center</agm-info-window>
+        </agm-marker>
+    </agm-map>
 </div>
