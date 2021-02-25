@@ -40,7 +40,8 @@ export class SidebarComponent implements OnInit {
   faFacebook = faFacebookF;
   faInstagram = faInstagram;
   faWhatsapp = faWhatsapp;
-
+  
+  panelOpenState = false;
   menu: boolean;
 
   constructor() {

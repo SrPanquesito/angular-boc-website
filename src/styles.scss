@@ -50,6 +50,13 @@ body {
     }
 }
 
+.material-icons {
+    font-size: 42px;
+}
+.mat-button.mat-accent, .mat-icon-button.mat-accent, .mat-stroked-button.mat-accent {
+    color: #4a88a0;
+}
+
 
 // TAREA: Esto debe de ir en un componente aparte.
 #banner {

@@ -44,6 +44,35 @@ hr {
     color: black;
 }
 
+/*
+*   Angular Material
+*/ 
+.mat-accordion {
+    outline: none;
+}
+.mat-expansion-panel {
+    outline: none;
+    display: inline;
+    border: none;
+    :hover {
+        background: none !important;
+    }
+}
+.mat-expansion-panel:hover .mat-expansion-panel-header-title {
+    color: var(--primary);
+}
+.mat-expansion-panel-header {
+    font-size: 1rem;
+    padding: 0;
+    height: inherit !important;
+}
+.mat-expansion-panel-header-title {
+    outline: none;
+}
+.mat-expansion-indicator::after {
+    margin-right: 1rem !important;
+}
+
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
     hr {

@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ServicesPageComponent } from './services-page/services-page.component';
+import { GeneralDentistryComponent } from './services-page/general-dentistry/general-dentistry.component';
+import { CosmeticDentistryComponent } from './services-page/cosmetic-dentistry/cosmetic-dentistry.component';
+import { DentalImplantsComponent } from './services-page/dental-implants/dental-implants.component';
 import { MiguelComponent } from './doctors/miguel/miguel.component';
 import { LupitaComponent } from './doctors/lupita/lupita.component';
 import { DanielComponent } from './doctors/daniel/daniel.component';
@@ -18,7 +21,10 @@ import { AgmCoreModule } from '@agm/core';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'services-page', component: ServicesPageComponent},
+  {path: 'services', component: ServicesPageComponent},
+  {path: 'services/general', component: GeneralDentistryComponent},
+  {path: 'services/cosmetic', component: CosmeticDentistryComponent},
+  {path: 'services/dental-implants', component: DentalImplantsComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'doctors/miguel', component: MiguelComponent},
   {path: 'doctors/lupita', component: LupitaComponent},
@@ -26,10 +32,13 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [BrowserModule, RouterModule.forRoot(routes), FontAwesomeModule, MatCarouselModule.forRoot(), BrowserAnimationsModule, 
-            AgmCoreModule.forRoot({apiKey: 'AIzaSyBIzpYyzXIQYiaVstaBg34wQ2X0ZLz9jiE'})],
+  imports: [
+            BrowserModule, RouterModule.forRoot(routes), FontAwesomeModule, MatCarouselModule.forRoot(), BrowserAnimationsModule, 
+            AgmCoreModule.forRoot({apiKey: 'AIzaSyBIzpYyzXIQYiaVstaBg34wQ2X0ZLz9jiE'}),
+          ],
   exports: [RouterModule],
-  declarations: [HomeComponent, ServicesPageComponent, MiguelComponent, LupitaComponent, DanielComponent, ContactComponent, CarouselComponent]
+  declarations: [HomeComponent, ServicesPageComponent, MiguelComponent, LupitaComponent, DanielComponent, ContactComponent, CarouselComponent, 
+                GeneralDentistryComponent, CosmeticDentistryComponent, DentalImplantsComponent]
 })
 export class AppRoutingModule {
   constructor(library: FaIconLibrary) {
