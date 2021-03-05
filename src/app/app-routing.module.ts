@@ -1,3 +1,5 @@
+import { environment as env } from '../environments/environment';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -34,7 +36,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
             BrowserModule, RouterModule.forRoot(routes), FontAwesomeModule, MatCarouselModule.forRoot(), BrowserAnimationsModule, 
-            AgmCoreModule.forRoot({apiKey: 'AIzaSyBIzpYyzXIQYiaVstaBg34wQ2X0ZLz9jiE'}),
+            AgmCoreModule.forRoot({apiKey: env.gmapsKey}),
           ],
   exports: [RouterModule],
   declarations: [HomeComponent, ServicesPageComponent, MiguelComponent, LupitaComponent, DanielComponent, ContactComponent, CarouselComponent, 
