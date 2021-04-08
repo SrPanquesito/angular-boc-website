@@ -73,19 +73,20 @@
                     <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
                 </li>
                 <mat-accordion>
-                    <mat-expansion-panel (opened)="panelOpenState = true" hideToggle
-                                         (closed)="panelOpenState = false">
+                    <mat-expansion-panel hideToggle #servicesPanel (opened)="panel = true" (closed)="panel = false" >
                       <mat-expansion-panel-header>
                         <mat-panel-title routerLink="/services" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                           Services
                         </mat-panel-title>
                       </mat-expansion-panel-header>
-                      <button mat-button><a class="nav-link" routerLink="/services/general" routerLinkActive="active">General Dentistry</a></button>
-                      <button mat-button><a class="nav-link" routerLink="/services/cosmetic" routerLinkActive="active">Cosmetic Dentistry</a></button>
-                      <button mat-button><a class="nav-link" routerLink="/services/dental-implants" routerLinkActive="active">Dental Implants</a></button>
-                      <button mat-button><a class="nav-link">Endodontics</a></button>
-                      <button mat-button><a class="nav-link">Periodontics</a></button>
-                      <button mat-button><a class="nav-link">Oral Surgery</a></button>
+                      <div class="mat-panel-content" >
+                        <button mat-button><a class="nav-link" routerLink="/services/general" routerLinkActive="active">General Dentistry</a></button>
+                        <button mat-button><a class="nav-link" routerLink="/services/cosmetic" routerLinkActive="active">Cosmetic Dentistry</a></button>
+                        <button mat-button><a class="nav-link" routerLink="/services/dental-implants" routerLinkActive="active">Dental Implants</a></button>
+                        <button mat-button><a class="nav-link">Endodontics</a></button>
+                        <button mat-button><a class="nav-link">Periodontics</a></button>
+                        <button mat-button><a class="nav-link">Oral Surgery</a></button>
+                      </div>
                     </mat-expansion-panel>
                 </mat-accordion>
                 <li class="nav-item">

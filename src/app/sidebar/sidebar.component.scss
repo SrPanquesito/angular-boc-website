@@ -1,3 +1,9 @@
+// Disable Material expansion panel animations
+mat-expansion-panel,
+mat-expansion-panel * {
+  transition: none !important;
+}
+
 hr {
     width: 80%;
     margin: 1rem 15px 1rem;
