@@ -12,7 +12,7 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$angular-boc-website-primary: mat-palette($mat-indigo);
+$angular-boc-website-primary: mat-palette($mat-cyan, 800);
 $angular-boc-website-accent: mat-palette($mat-pink, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
@@ -50,13 +50,13 @@ body {
     }
 }
 
-.material-icons {
-    font-size: 42px;
+// For the FAB Menu (AngularMaterial in AppComponent)
+mat-fab-menu button:focus {
+    outline: none;
 }
-.mat-button.mat-accent, .mat-icon-button.mat-accent, .mat-stroked-button.mat-accent {
-    color: #4a88a0;
+.mat-fab .mat-button-wrapper img {
+    width: 50% !important;
 }
-
 
 // TAREA: Esto debe de ir en un componente aparte.
 #banner {

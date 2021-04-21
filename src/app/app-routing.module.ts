@@ -6,9 +6,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ServicesPageComponent } from './services-page/services-page.component';
-import { GeneralDentistryComponent } from './services-page/general-dentistry/general-dentistry.component';
-import { CosmeticDentistryComponent } from './services-page/cosmetic-dentistry/cosmetic-dentistry.component';
-import { DentalImplantsComponent } from './services-page/dental-implants/dental-implants.component';
 import { MiguelComponent } from './doctors/miguel/miguel.component';
 import { LupitaComponent } from './doctors/lupita/lupita.component';
 import { DanielComponent } from './doctors/daniel/daniel.component';
@@ -21,12 +18,26 @@ import { faPhoneAlt, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { MatCarouselModule } from '@ngbmodule/material-carousel';
 import { AgmCoreModule } from '@agm/core';
 
+import { AestheticComponent } from './services-page/aesthetic/aesthetic.component';
+import { VeneersComponent } from './services-page/veneers/veneers.component';
+import { ZirconiaComponent } from './services-page/zirconia/zirconia.component';
+import { Allon4Component } from './services-page/allon4/allon4.component';
+import { DentalImplantsComponent } from './services-page/dental-implants/dental-implants.component';
+import { RootCanalComponent } from './services-page/root-canal/root-canal.component';
+import { SedationComponent } from './services-page/sedation/sedation.component';
+import { OrofacialComponent } from './services-page/orofacial/orofacial.component';
+
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'services', component: ServicesPageComponent},
-  {path: 'services/general', component: GeneralDentistryComponent},
-  {path: 'services/cosmetic', component: CosmeticDentistryComponent},
+  {path: 'services/aesthetic', component: AestheticComponent},
+  {path: 'services/veneers', component: VeneersComponent},
+  {path: 'services/zirconia', component: ZirconiaComponent},
+  {path: 'services/allon4', component: Allon4Component},
   {path: 'services/dental-implants', component: DentalImplantsComponent},
+  {path: 'services/root-canal', component: RootCanalComponent},
+  {path: 'services/sedation', component: SedationComponent},
+  {path: 'services/orofacial', component: OrofacialComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'doctors/miguel', component: MiguelComponent},
   {path: 'doctors/lupita', component: LupitaComponent},
@@ -39,8 +50,9 @@ const routes: Routes = [
             AgmCoreModule.forRoot({apiKey: env.gmapsKey}),
           ],
   exports: [RouterModule],
-  declarations: [HomeComponent, ServicesPageComponent, MiguelComponent, LupitaComponent, DanielComponent, ContactComponent, CarouselComponent, 
-                GeneralDentistryComponent, CosmeticDentistryComponent, DentalImplantsComponent]
+  declarations: [HomeComponent, ServicesPageComponent, MiguelComponent, LupitaComponent, DanielComponent, ContactComponent, CarouselComponent,
+    AestheticComponent, VeneersComponent, ZirconiaComponent, Allon4Component, DentalImplantsComponent, RootCanalComponent, SedationComponent, OrofacialComponent
+  ]
 })
 export class AppRoutingModule {
   constructor(library: FaIconLibrary) {

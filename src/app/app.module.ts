@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
+import { MatFabMenuModule } from '@angular-material-extensions/fab-menu';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FooterComponent } from './footer/footer.component';
     FontAwesomeModule,
     BrowserAnimationsModule,
     MatExpansionModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFabMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CosmeticDentistryComponent } from './cosmetic-dentistry.component';
+import { AestheticComponent } from './aesthetic.component';
 
-describe('CosmeticDentistryComponent', () => {
-  let component: CosmeticDentistryComponent;
-  let fixture: ComponentFixture<CosmeticDentistryComponent>;
+describe('AestheticComponent', () => {
+  let component: AestheticComponent;
+  let fixture: ComponentFixture<AestheticComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CosmeticDentistryComponent ]
+      declarations: [ AestheticComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CosmeticDentistryComponent);
+    fixture = TestBed.createComponent(AestheticComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

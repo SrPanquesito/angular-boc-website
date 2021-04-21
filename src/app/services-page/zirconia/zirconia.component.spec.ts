@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GeneralDentistryComponent } from './general-dentistry.component';
+import { ZirconiaComponent } from './zirconia.component';
 
-describe('GeneralDentistryComponent', () => {
-  let component: GeneralDentistryComponent;
-  let fixture: ComponentFixture<GeneralDentistryComponent>;
+describe('ZirconiaComponent', () => {
+  let component: ZirconiaComponent;
+  let fixture: ComponentFixture<ZirconiaComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GeneralDentistryComponent ]
+      declarations: [ ZirconiaComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GeneralDentistryComponent);
+    fixture = TestBed.createComponent(ZirconiaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
