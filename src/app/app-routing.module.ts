@@ -26,6 +26,7 @@ import { DentalImplantsComponent } from './services-page/dental-implants/dental-
 import { RootCanalComponent } from './services-page/root-canal/root-canal.component';
 import { SedationComponent } from './services-page/sedation/sedation.component';
 import { OrofacialComponent } from './services-page/orofacial/orofacial.component';
+import { BannerComponent } from './shared/banner/banner.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -51,7 +52,7 @@ const routes: Routes = [
           ],
   exports: [RouterModule],
   declarations: [HomeComponent, ServicesPageComponent, MiguelComponent, LupitaComponent, DanielComponent, ContactComponent, CarouselComponent,
-    AestheticComponent, VeneersComponent, ZirconiaComponent, Allon4Component, DentalImplantsComponent, RootCanalComponent, SedationComponent, OrofacialComponent
+    AestheticComponent, VeneersComponent, ZirconiaComponent, Allon4Component, DentalImplantsComponent, RootCanalComponent, SedationComponent, OrofacialComponent, BannerComponent
   ]
 })
 export class AppRoutingModule {

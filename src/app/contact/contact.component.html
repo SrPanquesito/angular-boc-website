@@ -1,14 +1,8 @@
-<div id="banner" class="d-flex align-items-center">
-    <img src="assets/img/boc-banner-home.png" alt="" class="bg-img d-none d-lg-block">
-    <img src="assets/img/boc-banner-home-small.png" alt="" class="bg-img d-block d-lg-none">
-    <div class="flex-fill flex-column main-txt w-50">
-        <h1 class="text-left">
-            Make an Appointment
-        </h1>
-        <hr>
-    </div>
-    <div class="flex-fill d-none d-md-block w-50"></div>
-</div>
+<app-banner 
+    [bgImageDesktop]="'assets/img/boc-banner-home.png'" 
+    [bgImageMobile]="'assets/img/boc-banner-home-small.png'" 
+    [titleType]="'text'"
+    [titleContent]="'Make an Appointment'" ></app-banner>
 
 <div id="contact">
     <div class="d-flex flex-column flex-md-row contact-box">

@@ -1,20 +1,10 @@
-<div id="banner" class="d-flex align-items-center">
-    <img src="assets/img/boc-banner-services.png" alt="" class="bg-img d-none d-lg-block">
-    <img src="assets/img/boc-banner-services-small.png" alt="" class="bg-img d-block d-lg-none">
-    <div class="flex-fill flex-column main-txt w-50">
-        <h1 class="text-left">
-            Services
-        </h1>
-        <hr class="w-100">
-        <div class="d-flex flex-lg-row flex-column">
-            <h5 class="text-info">The most innovative dental treatments done with the latest technology and materials to restore, maintain & enhance your dental health</h5>
-        </div>
-        <div class="text-left pt-4">
-            <button class="btn btn-info">Make an appointment</button>
-        </div>
-    </div>
-    <div class="flex-fill d-none d-md-block w-50"></div>
-</div>
+<app-banner 
+    [bgImageDesktop]="'assets/img/boc-banner-services.png'" 
+    [bgImageMobile]="'assets/img/boc-banner-services-small.png'" 
+    [titleType]="'text'" 
+    [titleContent]="'Services'" 
+    [subtitleHtml]="subtitleHtml"
+    [buttonText]="'Make an appointment'" ></app-banner>
 
 <div id="services">
     <div class="d-flex flex-wrap">

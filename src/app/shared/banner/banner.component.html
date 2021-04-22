@@ -1,0 +1,23 @@
+<div id="banner" class="d-flex align-items-center">
+    <img [src]="bgImageDesktop" alt="" class="bg-img d-none d-lg-block">
+    <img [src]="bgImageMobile" alt="" class="bg-img d-block d-lg-none">
+    <div class="flex-fill flex-column main-txt w-50">
+        <div *ngIf="titleType === 'text'; else titleTypeImage">
+            <h1 class="text-left">
+                {{ titleContent }}
+            </h1>
+        </div>
+        <ng-template #titleTypeImage>
+            <img [src]="titleContent" class="w-100" alt="">
+        </ng-template>
+        
+        <hr class="w-100">
+        <div *ngIf="subtitleHtml">
+            <div class="d-flex flex-lg-row flex-column" [innerHTML]="subtitleHtml"></div>
+        </div>
+        <div *ngIf="buttonText" class="text-left pt-4">
+            <button class="btn btn-info">{{ buttonText }}</button>
+        </div>
+    </div>
+    <div class="flex-fill d-none d-md-block w-50"></div>
+</div>
