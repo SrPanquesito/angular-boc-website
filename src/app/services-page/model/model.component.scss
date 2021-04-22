@@ -1,0 +1,17 @@
+.info-box .d-flex {
+    width: 100%;
+}
+
+.text-banner .d-flex {
+    padding: 4rem 2rem;
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .info-box .d-flex {
+        width: 50%;
+    }
+    .text-banner .d-flex {
+        padding: 6rem 8rem;
+    }
+}

@@ -1,9 +1,16 @@
-<div class="row no-gutters">
-    <div class="col-12 col-lg-2">
-        <app-sidebar></app-sidebar>
-    </div>
-    <div class="col-12 col-lg-10 fixed-body">
-        <router-outlet></router-outlet>
-        <app-footer></app-footer>
+<div class="d-flex flex-column">
+    <mat-fab-menu class="fix-bottom-right"
+                 color="primary"
+                [fabButtons]="fabButtons"
+                (onFabMenuItemSelected)="fabItemSelected($event)">
+    </mat-fab-menu>
+    <div class="row no-gutters">
+        <div class="col-12 col-lg-2">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-12 col-lg-10 fixed-body">
+            <router-outlet></router-outlet>
+            <app-footer></app-footer>
+        </div>
     </div>
 </div>

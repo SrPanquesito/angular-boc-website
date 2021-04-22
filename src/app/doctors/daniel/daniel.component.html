@@ -1,16 +1,9 @@
-<div id="banner" class="d-flex align-items-center">
-    <img src="assets/img/boc-banner-drvalenzuela.png" alt="" class="bg-img d-none d-lg-block">
-    <img src="assets/img/boc-banner-drvalenzuela-small.png" alt="" class="bg-img d-block d-lg-none">
-    <div class="flex-fill flex-column main-txt w-50">
-        <img src="assets/img/signatures/s-drvalenzuela.png" class="w-100" alt="">
-        <hr class="w-100">
-        <div class="d-flex flex-lg-row flex-column">
-            <h4 class="text-info">Oral Rehabilitation /&nbsp;</h4>
-            <h4 class="text-info">Dental Implants</h4>
-        </div>
-    </div>
-    <div class="flex-fill d-none d-md-block w-50"></div>
-</div>
+<app-banner 
+    [bgImageDesktop]="'assets/img/boc-banner-drvalenzuela.png'" 
+    [bgImageMobile]="'assets/img/boc-banner-drvalenzuela-small.png'" 
+    [titleType]="'image'" 
+    [titleContent]="'assets/img/signatures/s-drvalenzuela.png'" 
+    [subtitleHtml]="subtitleHtml" ></app-banner>
 
 <div id="info" class="end">
     <div class="d-flex flex-column">

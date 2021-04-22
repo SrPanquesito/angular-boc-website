@@ -3,7 +3,7 @@
 <div class="d-lg-none fixed-top bg-white">
     <nav class="navbar navbar-expand-lg navbar-light d-flex align-items-center">
         <a class="brand py-lg-4 px-lg-2" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-            <img src="assets/logo-boc-black.png">
+            <img src="assets/logo-boc.png">
         </a>
         <button class="navbar-toggler" type="button" (click)="toggleMenu()">
             <span class="navbar-toggler-icon"></span>
@@ -62,7 +62,7 @@
 <div class="d-none d-lg-block sticky-top">
     <nav class="navbar navbar-expand-lg navbar-light d-flex flex-lg-column align-items-start">
         <a class="brand py-lg-4 px-lg-3" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-            <img src="assets/logo-boc-black.png">
+            <img src="assets/logo-boc.png">
         </a>
         <button class="navbar-toggler" type="button" (click)="toggleMenu()">
             <span class="navbar-toggler-icon"></span>
@@ -73,19 +73,22 @@
                     <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
                 </li>
                 <mat-accordion>
-                    <mat-expansion-panel (opened)="panelOpenState = true" hideToggle
-                                         (closed)="panelOpenState = false">
+                    <mat-expansion-panel hideToggle #servicesPanel (opened)="panel = true" (closed)="panel = false" >
                       <mat-expansion-panel-header>
                         <mat-panel-title routerLink="/services" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                           Services
                         </mat-panel-title>
                       </mat-expansion-panel-header>
-                      <button mat-button><a class="nav-link" routerLink="/services/general" routerLinkActive="active">General Dentistry</a></button>
-                      <button mat-button><a class="nav-link" routerLink="/services/cosmetic" routerLinkActive="active">Cosmetic Dentistry</a></button>
-                      <button mat-button><a class="nav-link" routerLink="/services/dental-implants" routerLinkActive="active">Dental Implants</a></button>
-                      <button mat-button><a class="nav-link">Endodontics</a></button>
-                      <button mat-button><a class="nav-link">Periodontics</a></button>
-                      <button mat-button><a class="nav-link">Oral Surgery</a></button>
+                      <div class="mat-panel-content" >
+                        <button mat-button><a class="nav-link" routerLink="/services/aesthetic" routerLinkActive="active">Aesthetic Dentistry</a></button>
+                        <button mat-button><a class="nav-link" routerLink="/services/veneers" routerLinkActive="active">Veneers</a></button>
+                        <button mat-button><a class="nav-link" routerLink="/services/zirconia" routerLinkActive="active">Zirconia Crowns</a></button>
+                        <button mat-button><a class="nav-link" routerLink="/services/allon4" routerLinkActive="active">All on 4 / All on X</a></button>
+                        <button mat-button><a class="nav-link" routerLink="/services/dental-implants" routerLinkActive="active">Dental Implants</a></button>
+                        <button mat-button><a class="nav-link" routerLink="/services/root-canal" routerLinkActive="active">Root Canal Treatment</a></button>
+                        <button mat-button><a class="nav-link" routerLink="/services/sedation" routerLinkActive="active">Sedation</a></button>
+                        <button mat-button><a class="nav-link" routerLink="/services/orofacial" routerLinkActive="active">Orofacial Armonization</a></button>
+                      </div>
                     </mat-expansion-panel>
                 </mat-accordion>
                 <li class="nav-item">

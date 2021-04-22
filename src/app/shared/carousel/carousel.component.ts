@@ -19,7 +19,7 @@ export class CarouselComponent implements OnInit {
   public loop = true;
   public hideArrows = false;
   public hideIndicators = true;
-  public color: ThemePalette = 'accent';
+  public color: ThemePalette = 'primary';
   public maxWidth = 'auto';
   public maintainAspectRatio = true;
   public proportion = 35;
