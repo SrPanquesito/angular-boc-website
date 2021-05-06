@@ -48,7 +48,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-            BrowserModule, RouterModule.forRoot(routes), FontAwesomeModule, MatCarouselModule.forRoot(), BrowserAnimationsModule, 
+            BrowserModule, RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'}), FontAwesomeModule, MatCarouselModule.forRoot(), BrowserAnimationsModule, 
             AgmCoreModule.forRoot({apiKey: env.gmapsKey}),
           ],
   exports: [RouterModule],

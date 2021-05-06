@@ -13,40 +13,43 @@ export class AppComponent {
   fabButtons: MatFabMenu[] = [
     {
       id: 1,
-      icon: 'call',
-      tooltip: 'Teléfono',
+      imgUrl: 'assets/icons/messenger.svg',
+      tooltip: 'Messenger',
       tooltipPosition: 'before'
     },
     {
       id: 2,
-      icon: 'email',
-      tooltip: 'Email',
-      tooltipPosition: 'before'
-    },
-    {
-      id: 3,
       imgUrl: 'assets/icons/whatsapp.svg',
       tooltip: 'Whatsapp',
       tooltipPosition: 'before'
     },
     {
-      id: 4,
-      imgUrl: 'assets/icons/instagram.svg',
-      tooltip: 'Instagram',
+      id: 3,
+      icon: 'sms',
+      tooltip: 'SMS',
       tooltipPosition: 'before'
     },
     {
-      id: 5,
-      imgUrl: 'assets/icons/facebook.svg',
-      tooltip: 'Facebook',
+      id: 4,
+      icon: 'call',
+      tooltip: 'Teléfono',
       tooltipPosition: 'before'
     },
   ];
-
+  
   fabItemSelected(e: number) {
     switch (e) {
       case 1:
-        console.log(e);
+        window.open('http://m.me/BajaOralCenter', '_blank').focus();
+        break;
+      case 2:
+        window.open('https://api.whatsapp.com/send?phone=16192705368', '_blank').focus();
+        break;
+      case 3:
+        window.open('sms:6192705368?body=Hello. I would like to make an appointment.', '_blank').focus();
+        break;
+      case 4:
+        window.open('tel:6192705368', '_blank').focus();
         break;
     
       default:
