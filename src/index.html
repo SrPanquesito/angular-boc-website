@@ -11,18 +11,25 @@
 </head>
 <body>
   <app-root></app-root>
-  <!--Start of Tawk.to Script-->
-<!-- <script type="text/javascript">
-  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-  (function(){
-  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-  s1.async=true;
-  s1.src='https://embed.tawk.to/5efa3cd44a7c6258179b9010/default';
-  s1.charset='UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
-  })();
-  </script> -->
-  <!--End of Tawk.to Script-->
+
+  <!-- Tawk.io -->
+  <script type="text/javascript" src="assets/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/5efa3cd44a7c6258179b9010/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+
+    Tawk_API.onLoad = function () {
+      jQuery('iframe[title="chat widget"]').each(function(e) {
+      $(this).css('margin','0 80px 13px 0');
+    })
+    };
+  </script>
 </body>
 </html>
