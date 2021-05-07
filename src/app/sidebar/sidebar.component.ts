@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute, Event, NavigationEnd } from '@angular/router';
 import { MatExpansionPanel } from '@angular/material/expansion';
 import { trigger, state, style, animate, transition, keyframes, query, animateChild } from '@angular/animations';
@@ -47,18 +47,17 @@ export class SidebarComponent implements OnInit {
   menu: boolean;
   panel: boolean;
 
-  @ViewChild('servicesPanel') servicesPanel: MatExpansionPanel; 
+  @ViewChild('servicesPanel') servicesPanel: MatExpansionPanel;
 
   constructor(private route: ActivatedRoute, private router: Router) {
     this.menu = false;
     this.panel = false;
     this.router.events.subscribe((e: Event) => {
       if (e instanceof NavigationEnd) {
-        if (e.urlAfterRedirects.includes("/services")) {
-        }
-        else {
+        if (!e.urlAfterRedirects.includes("/services")) {
           this.servicesPanel.close();
         }
+        this.menu = false;
       }
     });
   }

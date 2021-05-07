@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+
 import {
   Orientation
 } from '@ngbmodule/material-carousel';
@@ -31,7 +33,23 @@ export class CarouselComponent implements OnInit {
   public useMouseWheel = false;
   public orientation: Orientation = 'ltr';
 
-  constructor() { }
+  constructor(breakpointObserver: BreakpointObserver) {
+    breakpointObserver.observe([
+      Breakpoints.HandsetLandscape,
+      Breakpoints.HandsetPortrait
+    ]).subscribe(result => {
+      if (result.matches) {
+        this.activateHandsetLayout();
+      }
+      else {
+        this.proportion = 35;
+      }
+    });
+  }
+
+  activateHandsetLayout() {
+    this.proportion = 70;
+  }
 
   ngOnInit(): void {
   }
