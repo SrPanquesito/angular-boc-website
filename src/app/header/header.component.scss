@@ -1,0 +1,43 @@
+#header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1100;
+
+    background-color: var(--boc-primary);
+    border-bottom: 1px solid var(--boc-secondary);
+}
+
+a {
+    color: var(--light-gray);
+}
+li {
+    :hover {
+        color: white;
+    }
+}
+.nav-link {
+    padding: 0.35rem;
+    font-size: 10px;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .nav-link {
+        padding: 0.35rem 1rem;
+        font-size: 1rem;
+    }
+}
+
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    #header {
+        position: relative;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1100;
+    }
+}

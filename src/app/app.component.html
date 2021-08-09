@@ -4,41 +4,12 @@
                 [fabButtons]="fabButtons"
                 (onFabMenuItemSelected)="fabItemSelected($event)">
     </mat-fab-menu>
-    <!-- <div class="row no-gutters">
-        <div class="col-12">
-            <div class="collapse show mt-3 w-100">
-                <ul class="nav flex-row align-self-start w-100">
-                    <li class="nav-item">
-                        <a class="nav-link text-info sidebar-text" href="tel:6192705368">US: +1(619)-270-5368</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-info sidebar-text" href="tel:011526646347626">MX: +1(664)-634-7626</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-secondary sidebar-text" href="mailto:bajaoralcenter@gmail.com">bajaoralcenter@gmail.com</a>
-                    </li>
-                    <li class="nav-item">
-                        <div class="nav-link pt-4">
-                            <a href="https://www.facebook.com/BajaOralCenter" target="__blank">
-                                <fa-icon class="pl-1 pr-4" [icon]="faFacebook" size="md"></fa-icon>
-                            </a>
-                            <a href="https://www.instagram.com/bajaoralcenter" target="__blank">
-                                <fa-icon class="pl-1 pr-4" [icon]="faInstagram" size="md"></fa-icon>
-                            </a>
-                            <a href="https://api.whatsapp.com/send?phone=6192705368" target="__blank">
-                                <fa-icon class="pl-1 pr-4" [icon]="faWhatsapp" size="md"></fa-icon>
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div> -->
     <div class="row no-gutters">
         <div class="col-12 col-lg-2">
             <app-sidebar></app-sidebar>
         </div>
         <div class="col-12 col-lg-10 fixed-body">
+            <app-header></app-header>
             <router-outlet></router-outlet>
             <app-footer></app-footer>
         </div>
