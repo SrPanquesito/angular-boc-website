@@ -7,7 +7,7 @@ mat-expansion-panel * {
 hr {
     width: 80%;
     margin: 1rem 15px 1rem;
-    border-top: 1px solid #c7b59b;
+    border-top: 1px solid var(--boc-secondary);
 }
 
 .brand {
@@ -21,7 +21,26 @@ hr {
 }
 
 .navbar {
-    border-right: 1px solid #c7b59b;
+    border-right: 1px solid var(--boc-secondary);
+    background-color: var(--info);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.navbar::-webkit-scrollbar {
+    width: 4px;
+}
+/* Track */
+.navbar::-webkit-scrollbar-track {
+    background: var(--boc-primary);
+}
+/* Handle */
+.navbar::-webkit-scrollbar-thumb {
+    background: var(--boc-secondary);
+}
+/* Handle on hover */
+.navbar::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
 }
 
 .nav-item {
@@ -29,25 +48,26 @@ hr {
     overflow: hidden;
 
     :hover {
-        color: var(--primary);
+        color: white;
     }
 }
 .nav-link.active {
     font-weight: 500;
-    color: var(--primary);
+    font-size: 17px;
+    color: white;
 
     padding: 0 0.5rem;
-    border-left: 1px solid #c7b59b;
+    border-left: 1px solid var(--boc-secondary);
     margin: 0.4rem 1rem;
 }
 .nav-link {
-    color: var(--secondary);
+    color: var(--light-gray);
 }
 
 .sidebar-text {
     font-size: .7rem;
     padding: 0.15rem 1rem;
-    color: black;
+    color: var(--light-gray);
 }
 
 /*
@@ -65,7 +85,7 @@ hr {
     }
 }
 .mat-expansion-panel:hover .mat-expansion-panel-header-title {
-    color: var(--primary);
+    color: white;
 }
 .mat-expansion-panel-header {
     font-size: 1rem;
@@ -77,6 +97,10 @@ hr {
 }
 .mat-expansion-indicator::after {
     margin-right: 1rem !important;
+}
+
+.mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button {
+    padding: 0;
 }
 
 // Large devices (desktops, 992px and up)
@@ -92,7 +116,7 @@ hr {
     .brand {
         img {
             margin-top: 1rem;
-            width: 160px;
+            width: 182px;
         }
     }
 }

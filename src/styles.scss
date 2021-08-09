@@ -126,10 +126,10 @@ p {
     font-size: 15px;
 }
 fa-icon {
-    color: var(--secondary);
+    color: var(--light-gray);
 
     :hover {
-        color: var(--primary);
+        color: white;
     } 
 }
 
@@ -159,6 +159,10 @@ fa-icon {
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+    p {
+        font-size: 17px;
+    }
+
     .end {
         margin-bottom: 6rem;
     }
@@ -182,7 +186,7 @@ fa-icon {
             padding-top: 5rem;
 
             img {
-                width: 90%;
+                width: 80%;
             }
         }
         .info-txt {
@@ -247,3 +251,15 @@ fa-icon {
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--light-gray);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--boc-secondary);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}

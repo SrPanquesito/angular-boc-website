@@ -44,6 +44,7 @@ $green:   #28a745 !default;
 $teal:    #20c997 !default;
 $cyan:    #4a88a0 !default;
 $cyan-light: #f2f7fa !default;
+$white-gray: #dde3e8 !default;
 
 $colors: () !default;
 $colors: map-merge(
@@ -60,7 +61,8 @@ $colors: map-merge(
     "cyan":       $cyan,
     "white":      $white,
     "gray":       $gray-600,
-    "gray-dark":  $gray-800
+    "gray-dark":  $gray-800,
+    "white-gray": $white-gray
   ),
   $colors
 );
@@ -73,6 +75,9 @@ $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $cyan-light !default;
 $dark:          $gray-800 !default;
+$light-gray:    $white-gray !default;
+$boc-primary:   #4a88a0 !default;
+$boc-secondary: #1d4563 !default;
 
 $theme-colors: () !default;
 $theme-colors: map-merge(
@@ -84,7 +89,10 @@ $theme-colors: map-merge(
     "warning":    $warning,
     "danger":     $danger,
     "light":      $light,
-    "dark":       $dark
+    "dark":       $dark,
+    "light-gray": $light-gray,
+    "boc-primary": $boc-primary,
+    "boc-secondary": $boc-secondary
   ),
   $theme-colors
 );

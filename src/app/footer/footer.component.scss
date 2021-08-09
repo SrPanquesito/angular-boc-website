@@ -2,12 +2,12 @@
     padding: 0 2rem;
     bottom: 0;
     z-index: 10;
-    background-color: white;
-    border-top: 1px solid #c7b59b;
+    background-color: var(--boc-primary);
+    border-top: 1px solid var(--boc-secondary);
 
     span {
         font-size: .7rem;
         margin: 1rem 0;
-        color: var(--secondary);
+        color: var(--light-gray);
     }
 }
