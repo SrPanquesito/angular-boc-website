@@ -124,6 +124,7 @@ hr {
 }
 p {
     font-size: 15px;
+    font-family: 'Raleway', sans-serif;
 }
 fa-icon {
     color: var(--light-gray);
@@ -144,7 +145,8 @@ fa-icon {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255,255,255,.6);
+    background: rgba(255,255,255,0);
+    transition: background 500ms ease;
 }
 .end {
     margin-bottom: 3rem;

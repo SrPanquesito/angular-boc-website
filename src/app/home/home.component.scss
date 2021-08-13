@@ -1,7 +1,49 @@
 #home {
     &__services {
+        .service-container {
+            overflow: hidden;
+        }
         .service-box {
             position: relative;
+
+
+            /* ------- Shinny Glass Effect -------- */ 
+            overflow: hidden;
+        
+            &::before {
+                content: '';
+                background: rgba(white, 0.2);
+                width: 20%;
+                height: 100%;
+                top: 0%;
+                left: -125%;
+          
+                transform: skew(45deg);
+          
+                position: absolute;
+          
+                transition: left 500ms ease-out;
+              }
+            /* ------- Shinny Glass Effect -------- */ 
+            &:hover {
+                &::before {
+                    left: 150%;
+                  }
+
+                .service-txt {
+                    opacity: 1;
+                    transition: opacity 500ms ease-out;
+                }
+                .white-out:after {
+                    background: rgba(255,255,255,0.75);
+                    transition: background 500ms ease-out;
+                }
+                img {
+                    width: 102%;
+                    height: 102%;
+                    transition: all 500ms ease-out;
+                }
+            }
 
             img {
                 position: absolute;
@@ -9,11 +51,15 @@
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+                transition: all 500ms ease-out;
             }
         }
         .service-txt {
             padding: 3rem;
             z-index: 1;
+            opacity: 0;
+            cursor: default;
+            transition: opacity 500ms ease;
 
             h4 {
                 font-weight: 700;
