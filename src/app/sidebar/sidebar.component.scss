@@ -104,21 +104,11 @@ hr {
 }
 
 .fixed-top {
-    top: 25px;
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-    .fixed-top {
-        top: 35px;
-    }
+    top: 0;
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-    .fixed-top {
-        top: 0;
-    }
     hr {
         margin: 1.5rem 15px 1.5rem;
     }

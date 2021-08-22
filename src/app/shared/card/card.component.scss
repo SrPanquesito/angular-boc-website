@@ -1,0 +1,62 @@
+.example-card {
+    max-width: 360px;
+    margin: 12px auto;
+    
+    /* ----- Shinny Glass Effect ----- */
+    overflow: hidden;
+    &::before {
+        content: '';
+        background: rgba(white, 0.2);
+        width: 20%;
+        height: 100%;
+        top: 0%;
+        left: -125%;
+        z-index: 10;
+  
+        transform: skew(45deg);
+  
+        position: absolute;
+  
+        transition: left 500ms ease-out;
+    }
+    &:hover {
+        &::before {
+            left: 150%;
+        }
+    }
+    /* ----- Shinny Glass Effect ----- */
+
+    &:hover {
+        cursor: pointer;
+        background-color: #0000001f;
+
+        .whiteout:after {
+            background: rgba(255,255,255,0.5);
+            transition: background 500ms ease-out;
+        }
+    }
+}
+  
+.example-header-image {
+    background-size: cover;
+}
+
+.mat-img-box {
+    position: relative;
+}
+.whiteout:after {
+    position: absolute;
+    content: '';
+    display: block;
+    top: -16px;
+    left: -16px;
+    right: -16px;
+    bottom: 0;
+    background: rgba(255,255,255,0);
+    transition: background 500ms ease;
+}
+
+/* ------- Override Default Classes ------- */
+.mat-card-image {
+    margin: 0 -16px 0 -16px;
+}

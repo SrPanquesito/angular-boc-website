@@ -11,12 +11,15 @@ import { LupitaComponent } from './doctors/lupita/lupita.component';
 import { DanielComponent } from './doctors/daniel/daniel.component';
 import { ContactComponent } from './contact/contact.component';
 import { CarouselComponent } from './shared/carousel/carousel.component';
+import { CardComponent } from './shared/card/card.component';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faEnvelope, faUser } from '@fortawesome/free-regular-svg-icons';
 import { faPhoneAlt, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { MatCarouselModule } from '@ngbmodule/material-carousel';
 import { AgmCoreModule } from '@agm/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 import { AestheticComponent } from './services-page/aesthetic/aesthetic.component';
 import { VeneersComponent } from './services-page/veneers/veneers.component';
@@ -49,11 +52,12 @@ const routes: Routes = [
 @NgModule({
   imports: [
             BrowserModule, RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'}), FontAwesomeModule, MatCarouselModule.forRoot(), BrowserAnimationsModule, 
-            AgmCoreModule.forRoot({apiKey: env.gmapsKey}),
+            AgmCoreModule.forRoot({apiKey: env.gmapsKey}), MatButtonModule, MatCardModule
           ],
   exports: [RouterModule],
   declarations: [HomeComponent, ServicesPageComponent, MiguelComponent, LupitaComponent, DanielComponent, ContactComponent, CarouselComponent,
-    AestheticComponent, VeneersComponent, ZirconiaComponent, Allon4Component, DentalImplantsComponent, RootCanalComponent, SedationComponent, OrofacialComponent, BannerComponent, ModelComponent
+    AestheticComponent, VeneersComponent, ZirconiaComponent, Allon4Component, DentalImplantsComponent, RootCanalComponent, SedationComponent, 
+    OrofacialComponent, BannerComponent, ModelComponent, CardComponent
   ]
 })
 export class AppRoutingModule {
