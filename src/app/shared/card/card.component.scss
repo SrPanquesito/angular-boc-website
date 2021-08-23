@@ -1,6 +1,6 @@
 .example-card {
     max-width: 360px;
-    margin: 12px auto;
+    margin: 16px auto;
     
     /* ----- Shinny Glass Effect ----- */
     overflow: hidden;
@@ -38,7 +38,9 @@
 }
   
 .example-header-image {
-    background-size: cover;
+    background-size: 26px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .mat-img-box {
@@ -59,4 +61,15 @@
 /* ------- Override Default Classes ------- */
 .mat-card-image {
     margin: 0 -16px 0 -16px;
+}
+.mat-card-content {
+    height: 100px;
+}
+p {
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Roboto';
+}
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: 0px 5px 5px -6px rgb(0 0 0 / 10%), 0px -1px 8px 0px rgb(0 0 0 / 7%), 0px 8px 12px 0px rgb(0 0 0 / 6%);
 }
