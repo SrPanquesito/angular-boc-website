@@ -1,0 +1,45 @@
+<mat-card class="contact-card">
+    
+    <mat-card-title-group>
+        <mat-card-title class="text-boc-primary">Send us a Message</mat-card-title>
+        <mat-card-subtitle>We would like to hear from you</mat-card-subtitle>
+    </mat-card-title-group>
+
+    <mat-card-content>
+        <p style="font-size: 12px;">Call us, email us or stop by the office, we're always here for you!</p>
+        <div class="d-flex flex-wrap justify-content-center">
+            <mat-form-field appearance="fill" class="flex-grow-1 mr-0 mr-md-3">
+                <mat-label>Enter your name</mat-label>
+                <input matInput placeholder="" [formControl]="name" required>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="flex-grow-1">
+                <mat-label>Enter your email</mat-label>
+                <input matInput placeholder="pat@example.com" [formControl]="email" required>
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="d-flex flex-wrap justify-content-center">
+            <mat-form-field appearance="fill" class="flex-grow-1">
+                <mat-label>Message</mat-label>
+                <textarea matInput style="height: 70px;"></textarea>
+              </mat-form-field>
+        </div>
+    </mat-card-content>
+    <mat-card-actions class="d-flex m-0">
+        <button mat-flat-button color="primary" class="flex-grow-1">Next</button>
+    </mat-card-actions>
+
+    <div class="circular-img d-none d-md-flex">
+        <img src="./assets/img/home-1.jpg" alt="" class="">
+    </div>
+</mat-card>
+
+<!-- 
+    1st. Step
+    
+
+    2nd. Step
+
+
+    3rd. Step
+ -->

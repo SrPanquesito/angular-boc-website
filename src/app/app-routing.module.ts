@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { ServicesPageComponent } from './services-page/services-page.component';
 import { MiguelComponent } from './doctors/miguel/miguel.component';
@@ -12,6 +13,7 @@ import { DanielComponent } from './doctors/daniel/daniel.component';
 import { ContactComponent } from './contact/contact.component';
 import { CarouselComponent } from './shared/carousel/carousel.component';
 import { CardComponent } from './shared/card/card.component';
+import { ContactCardComponent } from './shared/contact-card/contact-card.component';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faEnvelope, faUser } from '@fortawesome/free-regular-svg-icons';
@@ -20,6 +22,8 @@ import { MatCarouselModule } from '@ngbmodule/material-carousel';
 import { AgmCoreModule } from '@agm/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 import { AestheticComponent } from './services-page/aesthetic/aesthetic.component';
 import { VeneersComponent } from './services-page/veneers/veneers.component';
@@ -52,12 +56,12 @@ const routes: Routes = [
 @NgModule({
   imports: [
             BrowserModule, RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'}), FontAwesomeModule, MatCarouselModule.forRoot(), BrowserAnimationsModule, 
-            AgmCoreModule.forRoot({apiKey: env.gmapsKey}), MatButtonModule, MatCardModule
+            AgmCoreModule.forRoot({apiKey: env.gmapsKey}), MatButtonModule, MatCardModule, MatInputModule, MatFormFieldModule, ReactiveFormsModule
           ],
   exports: [RouterModule],
   declarations: [HomeComponent, ServicesPageComponent, MiguelComponent, LupitaComponent, DanielComponent, ContactComponent, CarouselComponent,
     AestheticComponent, VeneersComponent, ZirconiaComponent, Allon4Component, DentalImplantsComponent, RootCanalComponent, SedationComponent, 
-    OrofacialComponent, BannerComponent, ModelComponent, CardComponent
+    OrofacialComponent, BannerComponent, ModelComponent, CardComponent, ContactCardComponent
   ]
 })
 export class AppRoutingModule {
