@@ -5,7 +5,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatButtonModule } from '@angular/material/button';
-import { MatStepperModule } from '@angular/material/stepper';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,8 +28,7 @@ import { HeaderComponent } from './header/header.component';
     BrowserAnimationsModule,
     MatExpansionModule,
     MatButtonModule,
-    MatFabMenuModule,
-    MatStepperModule
+    MatFabMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
