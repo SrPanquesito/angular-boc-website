@@ -24,6 +24,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatStepperModule } from '@angular/material/stepper';
 
 import { AestheticComponent } from './services-page/aesthetic/aesthetic.component';
 import { VeneersComponent } from './services-page/veneers/veneers.component';
@@ -56,7 +57,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
             BrowserModule, RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'}), FontAwesomeModule, MatCarouselModule.forRoot(), BrowserAnimationsModule, 
-            AgmCoreModule.forRoot({apiKey: env.gmapsKey}), MatButtonModule, MatCardModule, MatInputModule, MatFormFieldModule, ReactiveFormsModule
+            AgmCoreModule.forRoot({apiKey: env.gmapsKey}), MatButtonModule, MatStepperModule, MatCardModule, MatInputModule, MatFormFieldModule, ReactiveFormsModule
           ],
   exports: [RouterModule],
   declarations: [HomeComponent, ServicesPageComponent, MiguelComponent, LupitaComponent, DanielComponent, ContactComponent, CarouselComponent,

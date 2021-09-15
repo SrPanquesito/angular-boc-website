@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-card',
@@ -10,9 +10,19 @@ export class ContactCardComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
   name = new FormControl('');
 
-  constructor() { }
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+
+  constructor(private _formBuilder: FormBuilder) {
+  }
 
   ngOnInit(): void {
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
   }
 
   getErrorMessage() {
