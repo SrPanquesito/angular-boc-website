@@ -1,23 +1,60 @@
-<mat-horizontal-stepper linear #stepper>
+<mat-card class="contact-card">
+    
+  <mat-horizontal-stepper linear #stepper>
     <mat-step [stepControl]="firstFormGroup">
-      <form [formGroup]="firstFormGroup">
-        <ng-template matStepLabel>Fill out your name</ng-template>
-        <mat-form-field>
-          <mat-label>Name</mat-label>
-          <input matInput formControlName="firstCtrl" placeholder="Last name, First name" required>
-        </mat-form-field>
-        <div>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
+      <ng-template matStepLabel>Fill out your name</ng-template>
+
+      <div class="step-content">
+        <mat-card-title-group>
+            <mat-card-title class="text-boc-primary">Connect With Us</mat-card-title>
+            <mat-card-subtitle>Set up your appointment with us in 3 easy steps</mat-card-subtitle>
+        </mat-card-title-group>
+        <mat-card-content>
+            <p style="font-size: 12px;">What is the reason of your appointment? // In which dental treatment are you interested in?</p>
+            <form [formGroup]="firstFormGroup" class="d-flex flex-wrap justify-content-center">
+              <mat-form-field appearance="fill" class="flex-grow-1">
+                <mat-label>Choose one of our services</mat-label>
+                <mat-select name="service" formControlName="selectedService">
+                  <mat-option *ngFor="let service of services" [value]="service.value">
+                    {{service.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </form>
+            <!-- <div class="d-flex flex-wrap justify-content-center">
+                <mat-form-field appearance="fill" class="flex-grow-1 mr-0 mr-md-3">
+                    <mat-label>Enter your name</mat-label>
+                    <input matInput placeholder="" [formControl]="name" required>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="flex-grow-1">
+                    <mat-label>Enter your email</mat-label>
+                    <input matInput placeholder="pat@example.com" [formControl]="email" required>
+                    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="d-flex flex-wrap justify-content-center">
+                <mat-form-field appearance="fill" class="flex-grow-1">
+                    <mat-label>Message</mat-label>
+                    <textarea matInput style="height: 70px;"></textarea>
+                  </mat-form-field>
+            </div> -->
+            <p style="font-size: 12px;">Feel free to send us a picture of your smile! And if you have any 
+            X-rays or a previous treatment plan, it would be very helpful as well.</p>
+        </mat-card-content>
+        <mat-card-actions class="d-flex justify-content-between m-0">
+            <button mat-flat-button color="primary" class="" (click)="onClickUpload()">Upload file</button>
+            <button mat-stroked-button color="primary" matStepperNext>Continue >></button>
+        </mat-card-actions>
+      </div>
     </mat-step>
+      <!--  -->
     <mat-step [stepControl]="secondFormGroup">
       <form [formGroup]="secondFormGroup">
         <ng-template matStepLabel>Fill out your address</ng-template>
         <mat-form-field>
           <mat-label>Address</mat-label>
           <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                 required>
+                  required>
         </mat-form-field>
         <div>
           <button mat-button matStepperPrevious>Back</button>
@@ -35,50 +72,9 @@
     </mat-step>
   </mat-horizontal-stepper>
 
-<mat-card class="contact-card">
-    
-    <mat-card-title-group>
-        <mat-card-title class="text-boc-primary">Connect With Us</mat-card-title>
-        <mat-card-subtitle>Set up your appointment with us in 3 easy steps</mat-card-subtitle>
-    </mat-card-title-group>
-
-    <mat-card-content>
-        <p style="font-size: 12px;">What is the reason of your appointment? // In which dental treatment are you interested in?</p>
-        <div class="d-flex flex-wrap justify-content-center">
-            <mat-form-field appearance="fill" class="flex-grow-1">
-                <mat-label></mat-label>
-                <input matInput placeholder="pat@example.com" [formControl]="email" required>
-                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-            </mat-form-field>
-        </div>
-        <!-- <div class="d-flex flex-wrap justify-content-center">
-            <mat-form-field appearance="fill" class="flex-grow-1 mr-0 mr-md-3">
-                <mat-label>Enter your name</mat-label>
-                <input matInput placeholder="" [formControl]="name" required>
-            </mat-form-field>
-            <mat-form-field appearance="fill" class="flex-grow-1">
-                <mat-label>Enter your email</mat-label>
-                <input matInput placeholder="pat@example.com" [formControl]="email" required>
-                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-            </mat-form-field>
-        </div>
-        <div class="d-flex flex-wrap justify-content-center">
-            <mat-form-field appearance="fill" class="flex-grow-1">
-                <mat-label>Message</mat-label>
-                <textarea matInput style="height: 70px;"></textarea>
-              </mat-form-field>
-        </div> -->
-        <p style="font-size: 12px;">Feel free to send us a picture of your smile! And if you have any 
-        X-rays or a previous treatment plan, it would be very helpful as well.</p>
-    </mat-card-content>
-    <mat-card-actions class="d-flex justify-content-between m-0">
-        <button mat-flat-button color="primary" class="">Upload file</button>
-        <button mat-stroked-button color="primary" class="">Continue >></button>
-    </mat-card-actions>
-
-    <div class="circular-img d-none d-md-flex">
-        <img src="./assets/img/home-1.jpg" alt="" class="">
-    </div>
+  <div class="circular-img d-none d-md-flex">
+      <img src="./assets/img/home-1.jpg" alt="" class="">
+  </div>
 </mat-card>
 
 <!-- 

@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { ServicesPageComponent } from './services-page/services-page.component';
 import { MiguelComponent } from './doctors/miguel/miguel.component';
@@ -25,6 +25,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatSelectModule } from '@angular/material/select'; 
 
 import { AestheticComponent } from './services-page/aesthetic/aesthetic.component';
 import { VeneersComponent } from './services-page/veneers/veneers.component';
@@ -57,7 +58,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
             BrowserModule, RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'}), FontAwesomeModule, MatCarouselModule.forRoot(), BrowserAnimationsModule, 
-            AgmCoreModule.forRoot({apiKey: env.gmapsKey}), MatButtonModule, MatStepperModule, MatCardModule, MatInputModule, MatFormFieldModule, ReactiveFormsModule
+            AgmCoreModule.forRoot({apiKey: env.gmapsKey}), MatButtonModule, MatStepperModule, MatCardModule, MatInputModule, MatFormFieldModule, FormsModule, ReactiveFormsModule, MatSelectModule
           ],
   exports: [RouterModule],
   declarations: [HomeComponent, ServicesPageComponent, MiguelComponent, LupitaComponent, DanielComponent, ContactComponent, CarouselComponent,
