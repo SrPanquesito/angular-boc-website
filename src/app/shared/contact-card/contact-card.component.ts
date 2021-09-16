@@ -14,6 +14,7 @@ interface Service {
 export class ContactCardComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  thirdFormGroup: FormGroup;
 
   services: Service[] = [
     {value: 'aesthetic', viewValue: 'Aesthetic Dentistry'},
@@ -29,18 +30,29 @@ export class ContactCardComponent implements OnInit {
   constructor(private _formBuilder: FormBuilder) {
   }
 
+  // convenience getter for easy access to form fields
+  get f3() { return this.thirdFormGroup.controls; }
+
   ngOnInit(): void {
     this.firstFormGroup = this._formBuilder.group({
       selectedService: ['', Validators.required]
     });
     this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
+      selectedDate: ['', Validators.required]
+    });
+    this.thirdFormGroup = this._formBuilder.group({
+      email: ['', Validators.required]
     });
   }
 
   onClickUpload() {
     console.log(JSON.stringify(this.firstFormGroup.value));
+    console.log(JSON.stringify(this.secondFormGroup.value));
     console.log(this.firstFormGroup.controls['selectedService'].value);
+  }
+
+  log3() {
+    console.log(this.thirdFormGroup.controls.email);
   }
 
 }
