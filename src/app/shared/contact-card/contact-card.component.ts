@@ -49,9 +49,6 @@ export class ContactCardComponent implements OnInit {
   get selectedDate() { return this.secondFormGroup.get('selectedDate'); }
   get email() { return this.thirdFormGroup.get('email'); }
 
-  // convenience getter for easy access to form fields
-  get f3() { return this.thirdFormGroup.controls; }
-
   getErrorMessage() {
     if (this.email.hasError('required')) {
       return 'You must enter a value';
@@ -72,10 +69,22 @@ export class ContactCardComponent implements OnInit {
     day === 6 ? this.dateMaxHour = "03:00 pm" : this.dateMaxHour = "05:00 pm";
   }
 
-  onClickUpload() {
-    console.log(JSON.stringify(this.firstFormGroup.value));
-    console.log(JSON.stringify(this.secondFormGroup.value));
-    console.log(this.firstFormGroup.controls['selectedService'].value);
+  // File Upload
+  fileName = null;
+  sendForm() {
+    const mergeForm = {
+      ...this.firstFormGroup.value,
+      ...this.secondFormGroup.value,
+      ...this.thirdFormGroup.value
+    };
+    console.log(JSON.stringify(mergeForm));
+    console.log(mergeForm);
+  }
+
+  onFileSelected(e) {
+    const file:File = e.target.files[0];
+    console.log(file);
+    console.log(e);
   }
 
 }
