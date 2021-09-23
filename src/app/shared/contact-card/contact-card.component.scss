@@ -5,6 +5,7 @@
 .step-content {
     padding-left: 0;
     padding-right: 0;
+    height: 400px;
 }
 
 .circular-img {
@@ -30,8 +31,9 @@
         max-width: 80vw;
     }
     .step-content {
-        padding-left: 10vw;
+        padding-left: 12vw;
         padding-right: 4vw;
+        height: 300px;
     }
 }
 
@@ -39,5 +41,8 @@
 @media (min-width: 992px) {
     .contact-card {
         max-width: 800px;
+    }
+    .step-content {
+        padding-left: 10vw;
     }
 }
