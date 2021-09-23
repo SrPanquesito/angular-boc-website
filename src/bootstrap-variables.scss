@@ -78,6 +78,7 @@ $dark:          $gray-800 !default;
 $light-gray:    $white-gray !default;
 $boc-primary:   #4a88a0 !default;
 $boc-secondary: #1d4563 !default;
+$boc-black:     $gray-900 !default;
 
 $theme-colors: () !default;
 $theme-colors: map-merge(
@@ -92,7 +93,8 @@ $theme-colors: map-merge(
     "dark":       $dark,
     "light-gray": $light-gray,
     "boc-primary": $boc-primary,
-    "boc-secondary": $boc-secondary
+    "boc-secondary": $boc-secondary,
+    "boc-black":  $boc-black
   ),
   $theme-colors
 );

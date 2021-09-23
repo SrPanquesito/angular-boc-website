@@ -2,10 +2,21 @@
     max-width: 90vw;
 }
 
+.header-title {
+    span {
+        color: rgba(0, 0, 0, 0.54);
+        font-size: 14px;
+    }
+}
+
 .step-content {
     padding-left: 0;
     padding-right: 0;
-    height: 400px;
+    height: 340px;
+}
+
+.mat-card-title {
+    font-size: 1.2rem;
 }
 
 .circular-img {
@@ -15,7 +26,7 @@
     height: 240px;
     overflow: hidden;
     border-radius: 50%;
-    top: 20%;
+    top: 35%;
     left: -20%;
 
     img {

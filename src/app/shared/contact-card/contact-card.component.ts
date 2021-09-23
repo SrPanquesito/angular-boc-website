@@ -16,7 +16,7 @@ export class ContactCardComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
-  dateMaxHour = "05:00 pm";
+  dateMaxHour = "03:00 pm";
 
   services: Service[] = [
     {value: 'aesthetic', viewValue: 'Aesthetic Dentistry'},
@@ -25,8 +25,7 @@ export class ContactCardComponent implements OnInit {
     {value: 'allon4', viewValue: 'All on 4 / All on X'},
     {value: 'dental-implants', viewValue: 'Dental Implants'},
     {value: 'root-canal', viewValue: 'Root Canal Treatment'},
-    {value: 'sedation', viewValue: 'Sedation'},
-    {value: 'orofacial', viewValue: 'Orofacial Armonization'}
+    {value: 'other', viewValue: 'Other...'}
   ];
 
   constructor(private _formBuilder: FormBuilder) {
@@ -34,7 +33,8 @@ export class ContactCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.firstFormGroup = this._formBuilder.group({
-      selectedService: ['', Validators.required]
+      selectedService: ['', Validators.required],
+      otherService: ['']
     });
     this.secondFormGroup = this._formBuilder.group({
       selectedDate: ['', Validators.required],
