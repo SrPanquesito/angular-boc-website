@@ -10,8 +10,7 @@
 
       <div class="step-content d-flex flex-column justify-content-between">
         <mat-card-title-group>
-            <mat-card-title class="text-primary">Connect With Us</mat-card-title>
-            <mat-card-subtitle>Set up your appointment with us in 3 easy steps</mat-card-subtitle>
+            <mat-card-title class="text-primary">Let's Start Planning</mat-card-title>
         </mat-card-title-group>
         <mat-card-content>
             <p style="font-size: 12px;">In which dental treatment are you interested in?</p>
@@ -36,7 +35,7 @@
             <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
    
             <div class="file-upload">
-                {{fileName || "No file uploaded yet."}}
+                <!-- {{fileName || "No file uploaded yet."}} -->
                 <button mat-flat-button color="primary" class="upload-btn" (click)="fileUpload.click()">Upload file</button>
             </div>
             <!-- <button mat-flat-button color="primary" class="" (click)="onClickUpload()">Upload file</button> -->

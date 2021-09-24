@@ -40,6 +40,7 @@ import { SedationComponent } from './services-page/sedation/sedation.component';
 import { OrofacialComponent } from './services-page/orofacial/orofacial.component';
 import { BannerComponent } from './shared/banner/banner.component';
 import { ModelComponent } from './services-page/model/model.component';
+import { PricesComponent } from './prices/prices.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -55,7 +56,8 @@ const routes: Routes = [
   {path: 'contact', component: ContactComponent},
   {path: 'doctors/miguel', component: MiguelComponent},
   {path: 'doctors/lupita', component: LupitaComponent},
-  {path: 'doctors/daniel', component: DanielComponent}
+  {path: 'doctors/daniel', component: DanielComponent},
+  {path: 'prices', component: PricesComponent}
 ];
 
 @NgModule({
@@ -68,7 +70,7 @@ const routes: Routes = [
   exports: [RouterModule],
   declarations: [HomeComponent, ServicesPageComponent, MiguelComponent, LupitaComponent, DanielComponent, ContactComponent, CarouselComponent,
     AestheticComponent, VeneersComponent, ZirconiaComponent, Allon4Component, DentalImplantsComponent, RootCanalComponent, SedationComponent, 
-    OrofacialComponent, BannerComponent, ModelComponent, CardComponent, ContactCardComponent
+    OrofacialComponent, BannerComponent, ModelComponent, CardComponent, ContactCardComponent, PricesComponent
   ]
 })
 export class AppRoutingModule {
