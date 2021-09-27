@@ -52,7 +52,7 @@ const routes: Routes = [
   {path: 'services/dental-implants', component: DentalImplantsComponent},
   {path: 'services/root-canal', component: RootCanalComponent},
   {path: 'services/sedation', component: SedationComponent},
-  {path: 'services/orofacial', component: OrofacialComponent},
+  {path: 'services/botox-fillers', component: OrofacialComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'doctors/miguel', component: MiguelComponent},
   {path: 'doctors/lupita', component: LupitaComponent},

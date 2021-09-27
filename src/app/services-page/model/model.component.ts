@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-service-model',
@@ -6,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./model.component.scss']
 })
 export class ModelComponent implements OnInit {
+  @Input() mainTitle: string;
+  @Input() mainImageDesktop: string;
+  @Input() mainImageMobile: string;
+  @Input() titles: Array<string>;
+  @Input() texts: Array<string>;
+  @Input() images: Array<string>;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
