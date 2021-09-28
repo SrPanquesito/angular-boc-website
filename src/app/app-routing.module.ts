@@ -41,6 +41,7 @@ import { OrofacialComponent } from './services-page/orofacial/orofacial.componen
 import { BannerComponent } from './shared/banner/banner.component';
 import { ModelComponent } from './services-page/model/model.component';
 import { PricesComponent } from './prices/prices.component';
+import { PriceTableComponent } from './shared/price-table/price-table.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -70,7 +71,7 @@ const routes: Routes = [
   exports: [RouterModule],
   declarations: [HomeComponent, ServicesPageComponent, MiguelComponent, LupitaComponent, DanielComponent, ContactComponent, CarouselComponent,
     AestheticComponent, VeneersComponent, ZirconiaComponent, Allon4Component, DentalImplantsComponent, RootCanalComponent, SedationComponent, 
-    OrofacialComponent, BannerComponent, ModelComponent, CardComponent, ContactCardComponent, PricesComponent
+    OrofacialComponent, BannerComponent, ModelComponent, CardComponent, ContactCardComponent, PricesComponent, PriceTableComponent
   ]
 })
 export class AppRoutingModule {

@@ -1,0 +1,28 @@
+<div class="d-flex flex-row">
+    icon
+    <h3>{{ title }}</h3>
+</div>
+<span>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat, nisl vel rutrum fermentum, eros massa imperdiet urna, a feugiat nulla est et libero.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat, nisl vel rutrum fermentum, eros massa imperdiet urna, a feugiat nulla est et libero.
+</span>
+<div class="d-flex flex-column">
+    <div class="d-flex flex-row justify-content-between bg-light">
+        <div class="w-50">
+            <h5>Service</h5>
+        </div>
+        <div class="w-50 d-flex flex-row justify-content-between">
+            <h5>BOC Price</h5>
+            <h5>USA Price</h5>
+        </div>
+    </div>
+    <div *ngFor="let service of services" class="d-flex flex-row justify-content-between border-bottom border-boc-secondary">
+        <div class="w-50">
+            <span>{{ service?.name }}</span>
+        </div>
+        <div class="w-50 d-flex flex-row justify-content-between">
+            <span><b>{{ service?.boc_price }}</b></span>
+            <span><b>{{ service?.usa_price }}</b></span>
+        </div>
+    </div>
+</div>
