@@ -19,14 +19,15 @@
   <mat-carousel-slide
     #matCarouselSlide
     *ngFor="let slide of slidesList; let i = index"
-    image="assets/img/boc-banner-home.png"
+    [image]="slide.backgroundImage"
     [overlayColor]="overlayColor"
     [hideOverlay]="hideOverlay"
   >
     <ng-container *ngIf="showContent">
-      <div class="d-flex flex-fill flex-row justify-content-left align-items-center h-100">
+      <!-- <div class="d-flex flex-fill flex-row justify-content-left align-items-center h-100">
           <img src="assets/dazzlesmile.png" class="" alt="" style="width: 30%; margin-left: 8rem; pointer-events: none;">
-      </div>
+      </div> -->
+      
       <!-- <div
         style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center"
       >

@@ -71,6 +71,7 @@ mat-fab-menu button:focus {
         height: inherit;
         z-index: -5;
         right: 0;
+        width: auto;
     }
 
     div {
@@ -221,6 +222,10 @@ fa-icon {
     }
 
     #banner {
+        .bg-img {
+            height: fill;
+            width: 100%;
+        }
         .main-txt {
             margin-left: 3rem;
         }
@@ -279,7 +284,7 @@ fa-icon {
     }
 
     #banner {
-        height: 400px;
+        height: 500px;
 
         .main-txt {
             width: 35%;

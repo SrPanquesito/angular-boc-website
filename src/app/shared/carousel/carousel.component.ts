@@ -12,12 +12,16 @@ import {
   styleUrls: ['./carousel.component.scss']
 })
 export class CarouselComponent implements OnInit {
-  public slidesList = new Array<never>(5);
+  public slidesList: Array<any> = [
+    {backgroundImage: 'assets/boc-banner-home.jpeg'},
+    {backgroundImage: 'assets/boc-banner-botox.jpeg'},
+    {backgroundImage: 'assets/boc-banner-rootcanal.jpeg'}
+  ];
   public showContent = true;
 
   public timings = '250ms ease-in';
   public autoplay = true;
-  public interval = 5000;
+  public interval = 50000;
   public loop = true;
   public hideArrows = false;
   public hideIndicators = true;
