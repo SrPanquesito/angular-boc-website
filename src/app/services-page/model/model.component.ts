@@ -13,6 +13,7 @@ export class ModelComponent implements OnInit {
   @Input() titles: Array<string>;
   @Input() texts: Array<string>;
   @Input() images: Array<string>;
+  @Input() showContent: boolean = true;
 
   constructor(private router: Router) { }
 

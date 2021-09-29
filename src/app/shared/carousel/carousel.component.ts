@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
@@ -12,11 +12,7 @@ import {
   styleUrls: ['./carousel.component.scss']
 })
 export class CarouselComponent implements OnInit {
-  public slidesList: Array<any> = [
-    {backgroundImage: 'assets/boc-banner-home.jpeg'},
-    {backgroundImage: 'assets/boc-banner-botox.jpeg'},
-    {backgroundImage: 'assets/boc-banner-rootcanal.jpeg'}
-  ];
+  @Input() slidesList: Array<any>;
   public showContent = true;
 
   public timings = '250ms ease-in';
@@ -30,7 +26,7 @@ export class CarouselComponent implements OnInit {
   public maintainAspectRatio = true;
   public proportion = 35;
   public slideHeight = '200px';
-  public slides = this.slidesList.length;
+  public slides;
   public overlayColor = '#00000000';
   public hideOverlay = false;
   public useKeyboard = true;
@@ -56,6 +52,7 @@ export class CarouselComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.slides = this.slidesList.length;
   }
 
   public onChange(index: number) {

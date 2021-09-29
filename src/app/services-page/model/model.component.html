@@ -1,9 +1,11 @@
 <app-banner 
     [bgImageDesktop]="mainImageDesktop ? mainImageDesktop : 'assets/img/boc-banner-home.png'" 
-    [bgImageMobile]="mainImageDesktop ? mainImageDesktop : 'assets/img/boc-banner-home-small.png'" 
+    [bgImageMobile]="mainImageMobile ? mainImageMobile : 'assets/img/boc-banner-home-small.png'" 
     [titleType]="'text'"
     [titleContent]="mainTitle ? mainTitle : 'General Service'"
-    [buttonText]="'Make an Appointment'" ></app-banner>
+    [buttonText]="'Make an Appointment'" 
+    [showContent]="showContent"
+></app-banner>
 
     
 <!-- Aqui va un texto estilo banner -->

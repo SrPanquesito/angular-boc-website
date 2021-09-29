@@ -13,6 +13,7 @@ export class BannerComponent implements OnInit {
   @Input() subtitleHtml: string;
   @Input() buttonText: string;
   @Input() buttonLink: string;
+  @Input() showContent: boolean = true;
 
   constructor() { }
 
