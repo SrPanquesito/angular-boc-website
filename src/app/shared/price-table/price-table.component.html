@@ -1,28 +1,40 @@
-<div class="d-flex flex-row">
-    icon
-    <h3>{{ title }}</h3>
-</div>
-<span>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat, nisl vel rutrum fermentum, eros massa imperdiet urna, a feugiat nulla est et libero.
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat, nisl vel rutrum fermentum, eros massa imperdiet urna, a feugiat nulla est et libero.
-</span>
-<div class="d-flex flex-column">
-    <div class="d-flex flex-row justify-content-between bg-light">
-        <div class="w-50">
-            <h5>Service</h5>
+<div id="prices-table">
+    <div class="d-flex flex-row align-items-center text-boc-primary title">
+        <div *ngIf="iconUrl; else defaultIcon">
+            <img [src]="iconUrl" alt="">
         </div>
-        <div class="w-50 d-flex flex-row justify-content-between">
-            <h5>BOC Price</h5>
-            <h5>USA Price</h5>
-        </div>
+        <ng-template #defaultIcon>
+            <fa-icon class="pl-1 pr-4" [icon]="faMoneyBillAlt" size="lg"></fa-icon>
+        </ng-template>
+        <h4>{{ title }}</h4>
     </div>
-    <div *ngFor="let service of services" class="d-flex flex-row justify-content-between border-bottom border-boc-secondary">
-        <div class="w-50">
-            <span>{{ service?.name }}</span>
+    <div class="separator">
+        <p>
+            {{ text }}
+        </p>
+    </div>
+    <div class="d-flex flex-column">
+        <div class="d-flex flex-row justify-content-between bg-light table-header">
+            <div class="w-col-1">
+                <h5>Service</h5>
+            </div>
+            <div class="w-col-2 d-flex flex-row justify-content-between">
+                <h5>BOC Price</h5>
+                <!-- <h5>USA Price</h5> -->
+            </div>
         </div>
-        <div class="w-50 d-flex flex-row justify-content-between">
-            <span><b>{{ service?.boc_price }}</b></span>
-            <span><b>{{ service?.usa_price }}</b></span>
+        <div *ngFor="let service of services" class="d-flex flex-row justify-content-between border-bottom table-row">
+            <div class="w-col-1">
+                <span>{{ service?.name }}</span>
+            </div>
+            <div class="w-col-2 d-flex flex-row justify-content-between align-items-end">
+                <div class="d-flex align-items-end">
+                    <span><b>{{ service?.boc_price }}</b></span>
+                    <span *ngIf="!service?.currency_off" class="currency">USD</span>
+                </div>
+                <span class="extra"><b>{{ service?.extra }}</b></span>
+                <!-- <span><b>{{ service?.usa_price }}</b></span> -->
+            </div>
         </div>
     </div>
 </div>

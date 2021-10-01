@@ -1,0 +1,10 @@
+.prices-container {
+    width: 90%;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .prices-container {
+        width: 75%;
+    }
+}

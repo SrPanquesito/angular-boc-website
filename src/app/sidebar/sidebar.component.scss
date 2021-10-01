@@ -72,6 +72,14 @@ hr {
     padding: 0.15rem 1rem;
     color: var(--light-gray);
 }
+fa-icon {
+    color: var(--light-gray);
+
+    :hover {
+        color: white;
+    } 
+}
+
 
 /*
 *   Angular Material
