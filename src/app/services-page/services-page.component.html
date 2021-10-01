@@ -4,74 +4,75 @@
     [titleType]="'text'" 
     [titleContent]="'Services'" 
     [subtitleHtml]="subtitleHtml"
-    [buttonText]="'Make an appointment'" ></app-banner>
+    [buttonText]="'Make an appointment'" 
+></app-banner>
 
-<div id="services">
-    <div class="d-flex flex-wrap justify-content-center justify-content-md-between">
-        <app-card 
-            [icon]="'url(assets/icons/service-general.svg)'"
-            [image]="'assets/img/services/s-1.png'"
-            [title]="'Aesthetic dentistry'"
-            [subtitle]="'Shine with your smile'"
-            [text]="'It’s not just about having new teeth. Feel confident in reclaiming your bright and youthful smile!'"
-            [linkUrl]="'/services/aesthetic'"
-        ></app-card>
-        <app-card 
-            [icon]="'url(assets/icons/service-cosmetic.svg)'"
-            [image]="'assets/img/services/veneers-1.png'"
-            [title]="'Veneers'"
-            [subtitle]="'Natural look, long lasting.'"
-            text="<i>Archieve the smile of your dreams. Boost your confidence.</i> You dream it, you live it. Archieve the natural smile you've always wanted and reclaim your confidence with porcelain veneers."
-            [linkUrl]="'/services/veneers'"
-        ></app-card>
-        <app-card 
-            [icon]="'url(assets/icons/service-implant.svg)'"
-            [image]="'assets/img/services/zirconia-1.png'"
-            [title]="'Zirconia crowns'"
-            [subtitle]="'Subtitle'"
-            [text]="'The best of two worlds, durability & aesthetics; say goodbye to the metal frame and fragile porcelain.'"
-            [linkUrl]="'/services/zirconia'"
-        ></app-card>
-        <app-card 
-            [icon]="'url(assets/icons/service-periodontic.svg)'"
-            [image]="'assets/img/services/allon4-1.png'"
-            [title]="'All on 4'"
-            [subtitle]="'All on X'"
-            [text]="'Secure the way you talk and eat, forget about that insecurity that gives you loose dentures.'"
-            [linkUrl]="'/services/allon4'"
-        ></app-card>
-        <app-card 
-            [icon]="'url(assets/icons/service-endodontic.svg)'"
-            [image]="'assets/img/services/s-5.png'"
-            [title]="'Dental implants'"
-            [subtitle]="'Replace missing teeth.'"
-            [text]="'<i>Strong and durable.</i> Replace your missing teeth with strong and durable dental implants. Regain the comfort of having a complete, healthy smile.'"
-            [linkUrl]="'/services/dental-implants'"
-        ></app-card>
-        <app-card 
-            [icon]="'url(assets/icons/service-oral.svg)'"
-            [image]="'assets/img/services/s-6.png'"
-            [title]="'Root canal treatment'"
-            [subtitle]="'Subtitle'"
-            [text]="'Tooth Pain? Broken tooth? Give your tooth another chance.'"
-            [linkUrl]="'/services/root-canal'"
-        ></app-card>
-        <app-card 
-            [icon]="'url(assets/icons/service-periodontic.svg)'"
-            [image]="'assets/img/services/s-7.png'"
-            [title]="'Sedation'"
-            [subtitle]="'Subtitle'"
-            [text]="'What a better way than to close your eyes and wake up with a new smile.'"
-            [linkUrl]="'/services/sedation'"
-        ></app-card>
-        <app-card 
-            [icon]="'url(assets/icons/service-oral.svg)'"
-            [image]="'assets/img/services/orofacial-1.png'"
-            [title]="'Botox & Fillers'"
-            [subtitle]="'Subtitle'"
-            [text]="'Your teeth are only the beginning.'"
-            [linkUrl]="'/services/botox-fillers'"
-        ></app-card>
-        <div style="width: 360px;"></div>
-    </div>
+<div class="d-flex justify-content-center">
+        <div id="services" class="d-flex flex-wrap justify-content-center justify-content-md-between">
+            <app-card 
+                [icon]="'url(assets/icons/service-general.svg)'"
+                [image]="'assets/img/services/s-1.png'"
+                [title]="'Aesthetic dentistry'"
+                [subtitle]="'Shine with your smile'"
+                [text]="'It’s not just about having new teeth. Feel confident in reclaiming your bright and youthful smile!'"
+                [linkUrl]="'/services/aesthetic'"
+            ></app-card>
+            <app-card 
+                [icon]="'url(assets/icons/service-cosmetic.svg)'"
+                [image]="'assets/img/services/veneers-1.png'"
+                [title]="'Veneers'"
+                [subtitle]="'Natural look, long lasting.'"
+                text="<i>Archieve the smile of your dreams. Boost your confidence.</i> You dream it, you live it. Archieve the natural smile you've always wanted and reclaim your confidence with porcelain veneers."
+                [linkUrl]="'/services/veneers'"
+            ></app-card>
+            <app-card 
+                [icon]="'url(assets/icons/service-implant.svg)'"
+                [image]="'assets/img/services/zirconia-1.png'"
+                [title]="'Zirconia crowns'"
+                [subtitle]="'Subtitle'"
+                [text]="'The best of two worlds, durability & aesthetics; say goodbye to the metal frame and fragile porcelain.'"
+                [linkUrl]="'/services/zirconia'"
+            ></app-card>
+            <app-card 
+                [icon]="'url(assets/icons/service-periodontic.svg)'"
+                [image]="'assets/img/services/allon4-1.png'"
+                [title]="'All on 4'"
+                [subtitle]="'All on X'"
+                [text]="'Secure the way you talk and eat, forget about that insecurity that gives you loose dentures.'"
+                [linkUrl]="'/services/allon4'"
+            ></app-card>
+            <app-card 
+                [icon]="'url(assets/icons/service-endodontic.svg)'"
+                [image]="'assets/img/services/s-5.png'"
+                [title]="'Dental implants'"
+                [subtitle]="'Replace missing teeth.'"
+                [text]="'<i>Strong and durable.</i> Replace your missing teeth with strong and durable dental implants. Regain the comfort of having a complete, healthy smile.'"
+                [linkUrl]="'/services/dental-implants'"
+            ></app-card>
+            <app-card 
+                [icon]="'url(assets/icons/service-oral.svg)'"
+                [image]="'assets/img/services/s-6.png'"
+                [title]="'Root canal treatment'"
+                [subtitle]="'Subtitle'"
+                [text]="'Tooth Pain? Broken tooth? Give your tooth another chance.'"
+                [linkUrl]="'/services/root-canal'"
+            ></app-card>
+            <app-card 
+                [icon]="'url(assets/icons/service-periodontic.svg)'"
+                [image]="'assets/img/services/s-7.png'"
+                [title]="'Sedation'"
+                [subtitle]="'Subtitle'"
+                [text]="'What a better way than to close your eyes and wake up with a new smile.'"
+                [linkUrl]="'/services/sedation'"
+            ></app-card>
+            <app-card 
+                [icon]="'url(assets/icons/service-oral.svg)'"
+                [image]="'assets/img/services/orofacial-1.png'"
+                [title]="'Botox & Fillers'"
+                [subtitle]="'Subtitle'"
+                [text]="'Your teeth are only the beginning.'"
+                [linkUrl]="'/services/botox-fillers'"
+            ></app-card>
+            <div style="width: 360px;"></div>
+        </div>
 </div>

@@ -1,5 +1,5 @@
 #services {
-    margin: 2rem 0 2rem;
+    width: 90%;
 
     .service-box {
         margin: 1.5rem;
@@ -41,7 +41,7 @@
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
     #services {
-        padding: 0 3rem;
+        width: 90%;
 
         .service-box {
             margin: 2rem 1rem;

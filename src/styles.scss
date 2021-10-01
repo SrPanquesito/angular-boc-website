@@ -234,10 +234,10 @@ p {
         }
     
         .info-box {
-            padding-top: 5rem;
+            padding-top: 3rem;
     
             img {
-                width: 80%;
+                width: 70%;
             }
         }
         .info-txt {
@@ -247,8 +247,6 @@ p {
     #info {
         img {
             z-index: 10;
-            margin-top: 0.5rem;
-            margin-bottom: -2.5rem;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 
                         0 6px 20px 0 rgba(0, 0, 0, 0.3);
         }
@@ -289,10 +287,6 @@ p {
     }
 
     #info {
-        img {
-            margin-bottom: -7rem;
-        }
-
         .info-txt {
             width: 80%;
             padding: 0;
