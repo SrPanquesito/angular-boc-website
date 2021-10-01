@@ -18,6 +18,7 @@
     }
     .info {
         width: 100%;
+        padding: 0 24px;
     
         .info-box {
             width: 100%;
@@ -47,6 +48,7 @@ agm-map {
         }
         .info {
             margin: 0 1rem;
+            padding: 0;
         }
     }
 }

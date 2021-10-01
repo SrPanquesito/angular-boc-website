@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 
@@ -13,6 +13,8 @@ interface Service {
   styleUrls: ['./contact-card.component.scss']
 })
 export class ContactCardComponent implements OnInit {
+  @Input() full: boolean = true;
+
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;

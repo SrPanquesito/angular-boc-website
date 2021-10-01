@@ -14,6 +14,10 @@
     padding-right: 0;
 }
 
+.step-content-short {
+    padding: 1rem 0;
+}
+
 .mat-card-title {
     font-size: 1.2rem;
 }
@@ -47,6 +51,9 @@
     .step-content {
         padding-left: 12vw;
         padding-right: 4vw;
+    }
+    .step-content-short {
+        padding: 2rem 0;
     }
 }
 

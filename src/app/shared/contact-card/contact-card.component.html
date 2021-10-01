@@ -1,14 +1,123 @@
-<mat-card class="contact-card">
-  <div class="header-title d-flex flex-column align-items-center px-4 py-2">
-    <h3 class="text-boc-primary">Connect With Us</h3>
-    <span>Set up your appointment with us in 3 easy steps</span>
-  </div>
+<ng-template [ngIf]="full" [ngIfElse]="short">
+  <mat-card class="contact-card">
+    <div class="header-title d-flex flex-column align-items-center px-4 py-2">
+      <h3 class="text-boc-primary">Connect With Us</h3>
+      <span>Set up your appointment with us in 3 easy steps</span>
+    </div>
+    <mat-horizontal-stepper linear #stepper>
+      <!-- First Step -->
+      <mat-step [stepControl]="firstFormGroup">
+        <ng-template matStepLabel>Step #1</ng-template>
+  
+        <div class="step-content d-flex flex-column justify-content-between">
+          <mat-card-title-group>
+              <mat-card-title class="text-primary">Let's Start Planning</mat-card-title>
+          </mat-card-title-group>
+          <mat-card-content>
+              <p style="font-size: 12px;">In which dental treatment are you interested in?</p>
+              <form [formGroup]="firstFormGroup" class="d-flex flex-wrap justify-content-center">
+                <mat-form-field appearance="fill" class="flex-grow-1">
+                  <mat-label>Choose one of our services</mat-label>
+                  <mat-select name="service" formControlName="selectedService">
+                    <mat-option *ngFor="let service of services" [value]="service.value">
+                      {{service.viewValue}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field *ngIf="selectedService.value === 'other'" appearance="fill" class="flex-grow-1 ml-0 ml-md-3">
+                  <mat-label>Enter service</mat-label>
+                  <input matInput formControlName="otherService" required>
+                </mat-form-field>
+              </form>
+              <p style="font-size: 12px;">Feel free to send us a picture of your smile! And if you have any 
+              X-rays or a previous treatment plan, it would be very helpful as well.</p>
+          </mat-card-content>
+          <mat-card-actions class="d-flex justify-content-between align-items-end m-0">
+              <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
+     
+              <div class="file-upload">
+                  <!-- {{fileName || "No file uploaded yet."}} -->
+                  <button mat-flat-button color="primary" class="upload-btn" (click)="fileUpload.click()">Upload file</button>
+              </div>
+              <!-- <button mat-flat-button color="primary" class="" (click)="onClickUpload()">Upload file</button> -->
+              <button mat-stroked-button color="primary" [disabled]="!firstFormGroup.valid" matStepperNext>Continue >></button>
+          </mat-card-actions>
+        </div>
+      </mat-step>
+  
+      <!-- Second Step -->
+      <mat-step [stepControl]="secondFormGroup">
+          <ng-template matStepLabel>Step #2</ng-template>
+  
+          <div class="step-content d-flex flex-column justify-content-between">
+            <mat-card-title-group>
+                <mat-card-title class="text-primary">Let's Set It Up!</mat-card-title>
+            </mat-card-title-group>
+            <mat-card-content>
+                <p style="font-size: 12px;">Which date and time would work best for you? Use the calendar below to select your preffered date and time for your appointment.</p>
+                <form [formGroup]="secondFormGroup" class="d-flex flex-wrap justify-content-between">
+                  <mat-form-field appearance="fill" class="flex-grow-1 mr-0 mr-md-3">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepickerFilter]="filterSundays" [matDatepicker]="picker" 
+                          formControlName="selectedDate" (click)="picker.open()" (dateInput)="adjustTime($event)">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill" class="flex-grow-1">
+                    <mat-label>Preffered time:</mat-label>
+                    <input matInput [ngxTimepicker]="timePicker" min="09:00 am" [max]="dateMaxHour"
+                          formControlName="selectedTime" style="padding:0.5em 0 0 0;" required readonly>
+                    <ngx-material-timepicker #timePicker minutesGap="30"></ngx-material-timepicker>
+                  </mat-form-field>
+                </form>
+            </mat-card-content>
+            <mat-card-actions class="d-flex justify-content-between align-items-end m-0">
+                <button mat-stroked-button color="primary" matStepperPrevious><< Back</button>
+                <button mat-stroked-button color="primary" [disabled]="!secondFormGroup.valid" matStepperNext>Continue >></button>
+            </mat-card-actions>
+          </div>
+      </mat-step>
+  
+      <!-- Third Step -->
+      <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        
+        <div class="step-content d-flex flex-column justify-content-between">
+          <mat-card-title-group>
+              <mat-card-title class="text-primary">Let's Make It Happen!</mat-card-title>
+          </mat-card-title-group>
+          <mat-card-content>
+              <p style="font-size: 12px;">Give us your e-mail address and we'll send you a link through e-mail to confirm your appointment in Google Calendar.</p>
+              <form [formGroup]="thirdFormGroup" class="d-flex flex-wrap justify-content-between">
+                <mat-form-field appearance="fill" class="flex-grow-1">
+                  <mat-label>Enter your email</mat-label>
+                  <input matInput placeholder="pat@example.com" formControlName="email" required>
+                  <mat-error *ngIf="email.invalid && (email.dirty || email.touched)">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+              </form>
+              <p>Thank you!</p>
+          </mat-card-content>
+          <mat-card-actions class="d-flex justify-content-between align-items-end m-0">
+              <button mat-stroked-button color="primary" matStepperPrevious><< Back</button>
+              <button mat-button color="primary" [disabled]="!thirdFormGroup.valid" (click)="sendForm()">SEND</button>
+          </mat-card-actions>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+  
+    <div class="circular-img d-none d-md-flex">
+        <img src="./assets/img/home-1.jpg" alt="" class="">
+    </div>
+  </mat-card>
+</ng-template>
+ 
+<ng-template #short>
   <mat-horizontal-stepper linear #stepper>
     <!-- First Step -->
     <mat-step [stepControl]="firstFormGroup">
       <ng-template matStepLabel>Step #1</ng-template>
 
-      <div class="step-content d-flex flex-column justify-content-between">
+      <div class="step-content-short d-flex flex-column justify-content-between">
         <mat-card-title-group>
             <mat-card-title class="text-primary">Let's Start Planning</mat-card-title>
         </mat-card-title-group>
@@ -48,7 +157,7 @@
     <mat-step [stepControl]="secondFormGroup">
         <ng-template matStepLabel>Step #2</ng-template>
 
-        <div class="step-content d-flex flex-column justify-content-between">
+        <div class="step-content-short d-flex flex-column justify-content-between">
           <mat-card-title-group>
               <mat-card-title class="text-primary">Let's Set It Up!</mat-card-title>
           </mat-card-title-group>
@@ -81,7 +190,7 @@
     <mat-step>
       <ng-template matStepLabel>Done</ng-template>
       
-      <div class="step-content d-flex flex-column justify-content-between">
+      <div class="step-content-short d-flex flex-column justify-content-between">
         <mat-card-title-group>
             <mat-card-title class="text-primary">Let's Make It Happen!</mat-card-title>
         </mat-card-title-group>
@@ -103,18 +212,4 @@
       </div>
     </mat-step>
   </mat-horizontal-stepper>
-
-  <div class="circular-img d-none d-md-flex">
-      <img src="./assets/img/home-1.jpg" alt="" class="">
-  </div>
-<!-- 
-  <p>Form Value: {{ firstFormGroup.value | json }}</p>
-  <p>Form Status: {{ firstFormGroup.status }}</p>
-
-  <p>Form Value: {{ secondFormGroup.value | json }}</p>
-  <p>Form Status: {{ secondFormGroup.status }}</p>
-
-  <p>Form Value: {{ thirdFormGroup.value | json }}</p>
-  <p>Form Status: {{ thirdFormGroup.status }}</p> 
--->
-</mat-card>
+</ng-template>
