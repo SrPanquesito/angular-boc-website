@@ -83,7 +83,7 @@ export class PricesComponent implements OnInit {
   constructor(public router: Router) {
     this.router.events.subscribe(event => {
       if(event instanceof NavigationEnd){
-         gtag('config', 'UA-98422402-1', { 'page_path': event.urlAfterRedirects });
+         gtag('config', 'G-B4V6GJJ1PR', { 'page_path': event.urlAfterRedirects });
       }
    })
   }
