@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+declare let gtag: Function;
 
 interface Services {
   general?: Array<Service>,
@@ -78,7 +80,13 @@ export class PricesComponent implements OnInit {
     ]
   };
 
-  constructor() { }
+  constructor(public router: Router) {
+    this.router.events.subscribe(event => {
+      if(event instanceof NavigationEnd){
+         gtag('config', 'UA-98422402-1', { 'page_path': event.urlAfterRedirects });
+      }
+   })
+  }
 
   ngOnInit(): void {
   }
