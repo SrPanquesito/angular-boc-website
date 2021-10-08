@@ -1,6 +1,6 @@
 <div id="banner" class="d-flex align-items-center">
-    <img [src]="bgImageDesktop" alt="" class="bg-img d-none d-lg-block">
-    <img [src]="bgImageMobile" alt="" class="bg-img d-block d-lg-none">
+    <div [style.background-image]="'url(' + bgImageDesktop + ')'" alt="" class="bg-img d-none d-lg-block"></div>
+    <div [style.background-image]="'url(' + bgImageMobile + ')'" alt="" class="bg-img d-block d-lg-none"></div>
     <div *ngIf="showContent" class="flex-fill flex-column main-txt w-50">
         <div *ngIf="titleType === 'text'; else titleTypeImage">
             <h1 class="text-left">
