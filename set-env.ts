@@ -12,12 +12,14 @@ require('dotenv').config();
 const envConfigFile = `export const environment = {
     production: false,
     gmapsKey: '${process.env.gmapsKey}',
+    api: '${process.env.api}'
 };
 `;
 // `environment.prod.ts` file structure
 const envConfigFileProd = `export const environment = {
     production: true,
     gmapsKey: '${process.env.gmapsKey}',
+    api: '${process.env.api}'
 };
 `;
 
