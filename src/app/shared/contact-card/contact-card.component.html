@@ -141,11 +141,16 @@
             X-rays or a previous treatment plan, it would be very helpful as well.</p>
         </mat-card-content>
         <mat-card-actions class="d-flex justify-content-between align-items-end m-0">
-            <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
+            <input type="file" class="file-input" accept="image/*,.pdf" name="img" (change)="onFileSelected($event)" #fileUpload>
    
             <div class="file-upload">
-                <!-- {{fileName || "No file uploaded yet."}} -->
+                {{fileName || ""}}
                 <button mat-flat-button color="primary" class="upload-btn" (click)="fileUpload.click()">Upload file</button>
+            </div>
+
+            <div class="progress">
+              <mat-progress-bar class="progress-bar" mode="determinate" [value]="uploadProgress" *ngIf="uploadProgress"></mat-progress-bar>
+              <mat-icon class="cancel-upload" (click)="cancelUpload()" *ngIf="uploadProgress">delete_forever</mat-icon>
             </div>
             <!-- <button mat-flat-button color="primary" class="" (click)="onClickUpload()">Upload file</button> -->
             <button mat-stroked-button color="primary" [disabled]="!firstFormGroup.valid" matStepperNext>Continue >></button>

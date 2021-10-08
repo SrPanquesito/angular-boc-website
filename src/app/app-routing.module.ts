@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { ServicesPageComponent } from './services-page/services-page.component';
@@ -28,6 +29,8 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatIconModule } from '@angular/material/icon';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 
 import { AestheticComponent } from './services-page/aesthetic/aesthetic.component';
@@ -64,9 +67,9 @@ const routes: Routes = [
 @NgModule({
   imports: [
             BrowserModule, RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'}), FontAwesomeModule, MatCarouselModule.forRoot(), BrowserAnimationsModule, 
-            AgmCoreModule.forRoot({apiKey: env.gmapsKey}), MatButtonModule, MatStepperModule, 
-            MatCardModule, MatInputModule, MatFormFieldModule, FormsModule, ReactiveFormsModule, 
-            MatSelectModule, MatDatepickerModule, MatNativeDateModule, NgxMaterialTimepickerModule
+            AgmCoreModule.forRoot({apiKey: env.gmapsKey}), HttpClientModule, MatButtonModule, MatStepperModule, 
+            MatCardModule, MatInputModule, MatFormFieldModule, MatIconModule, FormsModule, ReactiveFormsModule, 
+            MatSelectModule, MatDatepickerModule, MatNativeDateModule, NgxMaterialTimepickerModule, MatProgressBarModule
           ],
   exports: [RouterModule],
   declarations: [HomeComponent, ServicesPageComponent, MiguelComponent, LupitaComponent, DanielComponent, ContactComponent, CarouselComponent,

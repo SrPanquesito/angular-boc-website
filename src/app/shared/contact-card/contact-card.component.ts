@@ -1,6 +1,11 @@
+import { environment as env } from 'src/environments/environment';
+
+import { HttpClient, HttpEventType } from '@angular/common/http';
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
+import { Subscription } from 'rxjs';
+import { finalize } from 'rxjs/operators';
 
 interface Service {
   value: string;
@@ -30,13 +35,13 @@ export class ContactCardComponent implements OnInit {
     {value: 'other', viewValue: 'Other...'}
   ];
 
-  constructor(private _formBuilder: FormBuilder) {
-  }
+  constructor(private _formBuilder: FormBuilder, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.firstFormGroup = this._formBuilder.group({
       selectedService: ['', Validators.required],
-      otherService: ['']
+      otherService: [''],
+      fileUploaded: ['']
     });
     this.secondFormGroup = this._formBuilder.group({
       selectedDate: ['', Validators.required],
@@ -48,6 +53,7 @@ export class ContactCardComponent implements OnInit {
   }
 
   get selectedService() { return this.firstFormGroup.get('selectedService'); }
+  get fileUploaded() { return this.firstFormGroup.get('fileUploaded'); }
   get selectedDate() { return this.secondFormGroup.get('selectedDate'); }
   get email() { return this.thirdFormGroup.get('email'); }
 
@@ -71,8 +77,6 @@ export class ContactCardComponent implements OnInit {
     day === 6 ? this.dateMaxHour = "03:00 pm" : this.dateMaxHour = "05:00 pm";
   }
 
-  // File Upload
-  fileName = null;
   sendForm() {
     const mergeForm = {
       ...this.firstFormGroup.value,
@@ -83,10 +87,48 @@ export class ContactCardComponent implements OnInit {
     console.log(mergeForm);
   }
 
+
+  // File Upload
+  fileName = '';
+  uploadProgress: number;
+  uploadSub: Subscription;
   onFileSelected(e) {
     const file:File = e.target.files[0];
-    console.log(file);
-    console.log(e);
+
+    if (file) {
+        this.fileName = file.name;
+
+        // this.fileUploaded.setValue(file);
+        // console.log(this.fileUploaded.value);
+        // console.log(this.firstFormGroup.value);
+
+        const formData = new FormData();
+        formData.append("image", file);
+
+        const upload$ = this.http.post(env.api + "/file-upload", formData, {
+            reportProgress: true,
+            observe: 'events'
+        })
+        .pipe(
+            finalize(() => this.reset())
+        );
+      
+        this.uploadSub = upload$.subscribe(event => {
+          if (event.type == HttpEventType.UploadProgress) {
+            this.uploadProgress = Math.round(100 * (event.loaded / event.total));
+          }
+        })
+    }
+  }
+
+  cancelUpload() {
+    this.uploadSub.unsubscribe();
+    this.reset();
+  }
+
+  reset() {
+    this.uploadProgress = null;
+    this.uploadSub = null;
   }
 
 }
