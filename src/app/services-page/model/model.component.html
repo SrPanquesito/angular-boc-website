@@ -11,9 +11,11 @@
 <!-- Aqui va un texto estilo banner -->
 <div class="text-banner">
     <div class="d-flex flex-column justify-content-center align-items-center">
-            <h2>It’s never too late to invest in oral health</h2>
+            <h2 *ngIf="titles && titles.length > 0">{{ titles[0] }}</h2>
+            <h2 *ngIf="!titles">It’s never too late to invest in oral health</h2>
             <hr class="w-25">
-            <p class="text-center">
+            <p class="text-center" *ngIf="texts && texts.length > 0">{{ texts[0] }}</p>
+            <p class="text-center" *ngIf="!texts">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 Nulla at volutpat diam ut. Dictum varius duis at consectetur. Pulvinar mattis nunc sed blandit libero volutpat sed. 
                 Vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere. Nullam ac tortor vitae purus.                
@@ -34,9 +36,11 @@
         </div>
         <div class="d-flex flex-fill justify-content-center justify-content-lg-start align-items-md-center pb-lg-4 order-2">
             <div class="info-txt m-5">
-                <h4>The best quality <b>for you!</b></h4>
+                <h4 *ngIf="titles && titles.length > 1">{{ titles[1] }}</h4>
+                <h4 *ngIf="!titles">The best quality <b>for you!</b></h4>
                 <hr>
-                <p>
+                <p *ngIf="texts && texts.length > 1">{{ texts[1] }}</p>
+                <p *ngIf="!texts">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                     Nulla at volutpat diam ut. Dictum varius duis at consectetur. Pulvinar mattis nunc sed blandit libero volutpat sed. 
                     Vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere. Nullam ac tortor vitae purus. 
@@ -58,9 +62,11 @@
         </div>
         <div class="d-flex flex-fill justify-content-center align-items-lg-center pb-lg-4 order-2 order-lg-1">
             <div class="info-txt m-5">
-                <h4>Minimal discomfort</h4>
+                <h4 *ngIf="titles && titles.length > 2">{{ titles[2] }}</h4>
+                <h4 *ngIf="!titles">Minimal discomfort</h4>
                 <hr>
-                <p>
+                <p *ngIf="texts && texts.length > 2">{{ texts[2] }}</p>
+                <p *ngIf="!texts">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                     Nulla at volutpat diam ut. Dictum varius duis at consectetur. Pulvinar mattis nunc sed blandit libero volutpat sed. 
                     Vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere. Nullam ac tortor vitae purus. 

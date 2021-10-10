@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./root-canal.component.scss']
 })
 export class RootCanalComponent implements OnInit {
+  titlesArr: Array<string> = [];
+  textsArr: Array<string> = [];
 
   constructor() { }
 

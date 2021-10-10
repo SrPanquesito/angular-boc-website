@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./allon4.component.scss']
 })
 export class Allon4Component implements OnInit {
+  titlesArr: Array<string> = [];
+  textsArr: Array<string> = [];
 
   constructor() { }
 

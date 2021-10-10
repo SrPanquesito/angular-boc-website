@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./orofacial.component.scss']
 })
 export class OrofacialComponent implements OnInit {
+  titlesArr: Array<string> = [];
+  textsArr: Array<string> = [];
 
   constructor() { }
 

@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sedation.component.scss']
 })
 export class SedationComponent implements OnInit {
+  titlesArr: Array<string> = [];
+  textsArr: Array<string> = [];
 
   constructor() { }
 
