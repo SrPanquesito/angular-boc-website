@@ -2,6 +2,14 @@
     max-width: 90vw;
 }
 
+.fileUpload {
+    color: var(--boc-primary);
+    font-size: 12px;
+}
+.mat-progress-bar {
+    height: auto;
+}
+
 .header-title {
     span {
         color: rgba(0, 0, 0, 0.54);
