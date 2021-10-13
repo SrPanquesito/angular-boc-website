@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OrofacialComponent } from './orofacial.component';
+import { DentalAlignersComponent } from './dental-aligners.component';
 
-describe('OrofacialComponent', () => {
-  let component: OrofacialComponent;
-  let fixture: ComponentFixture<OrofacialComponent>;
+describe('SedationComponent', () => {
+  let component: DentalAlignersComponent;
+  let fixture: ComponentFixture<DentalAlignersComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OrofacialComponent ]
+      declarations: [ DentalAlignersComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OrofacialComponent);
+    fixture = TestBed.createComponent(DentalAlignersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

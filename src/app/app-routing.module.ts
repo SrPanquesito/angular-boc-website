@@ -39,8 +39,8 @@ import { ZirconiaComponent } from './services-page/zirconia/zirconia.component';
 import { Allon4Component } from './services-page/allon4/allon4.component';
 import { DentalImplantsComponent } from './services-page/dental-implants/dental-implants.component';
 import { RootCanalComponent } from './services-page/root-canal/root-canal.component';
-import { SedationComponent } from './services-page/sedation/sedation.component';
-import { OrofacialComponent } from './services-page/orofacial/orofacial.component';
+import { DentalAlignersComponent } from './services-page/dental-aligners/dental-aligners.component';
+import { BotoxComponent } from './services-page/botox/botox.component';
 import { BannerComponent } from './shared/banner/banner.component';
 import { ModelComponent } from './services-page/model/model.component';
 import { PricesComponent } from './prices/prices.component';
@@ -52,11 +52,11 @@ const routes: Routes = [
   {path: 'services/aesthetic', component: AestheticComponent},
   {path: 'services/veneers', component: VeneersComponent},
   {path: 'services/zirconia', component: ZirconiaComponent},
-  {path: 'services/allon4', component: Allon4Component},
+  {path: 'services/allon4-x', component: Allon4Component},
   {path: 'services/dental-implants', component: DentalImplantsComponent},
   {path: 'services/root-canal', component: RootCanalComponent},
-  {path: 'services/sedation', component: SedationComponent},
-  {path: 'services/botox-fillers', component: OrofacialComponent},
+  {path: 'services/dental-aligners', component: DentalAlignersComponent},
+  {path: 'services/botox-fillers', component: BotoxComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'doctors/miguel', component: MiguelComponent},
   {path: 'doctors/lupita', component: LupitaComponent},
@@ -73,8 +73,8 @@ const routes: Routes = [
           ],
   exports: [RouterModule],
   declarations: [HomeComponent, ServicesPageComponent, MiguelComponent, LupitaComponent, DanielComponent, ContactComponent, CarouselComponent,
-    AestheticComponent, VeneersComponent, ZirconiaComponent, Allon4Component, DentalImplantsComponent, RootCanalComponent, SedationComponent, 
-    OrofacialComponent, BannerComponent, ModelComponent, CardComponent, ContactCardComponent, PricesComponent, PriceTableComponent
+    AestheticComponent, VeneersComponent, ZirconiaComponent, Allon4Component, DentalImplantsComponent, RootCanalComponent, DentalAlignersComponent, 
+    BotoxComponent, BannerComponent, ModelComponent, CardComponent, ContactCardComponent, PricesComponent, PriceTableComponent
   ]
 })
 export class AppRoutingModule {
