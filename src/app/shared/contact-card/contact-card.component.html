@@ -44,6 +44,7 @@
             </div>
 
             <button mat-stroked-button color="primary" [disabled]="!firstFormGroup.valid" matStepperNext>Continue >></button>
+            <button mat-stroked-button color="primary" (click)="testCors()">Test</button>
           </mat-card-actions>
           <b class="fileUpload" *ngIf="fileUploadedCompleted">File {{ fileName }} ready to send.</b>
         </div>

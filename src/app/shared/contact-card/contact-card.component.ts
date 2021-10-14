@@ -79,6 +79,12 @@ export class ContactCardComponent implements OnInit {
   }
 
   // Send file for uploading
+  testCors() {
+    this.contactCardService.getTest().subscribe(
+      res => console.log(res),
+      err => console.log(err)
+    );
+  }
   prepareForm() {
     this.sendingForm = true;
     this.sendedForm = true;
