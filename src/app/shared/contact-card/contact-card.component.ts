@@ -54,6 +54,7 @@ export class ContactCardComponent implements OnInit {
   }
 
   get selectedService() { return this.firstFormGroup.get('selectedService'); }
+  get otherService() { return this.firstFormGroup.get('otherService'); }
   get fileUploaded() { return this.firstFormGroup.get('fileUploaded'); }
   get selectedDate() { return this.secondFormGroup.get('selectedDate'); }
   get email() { return this.thirdFormGroup.get('email'); }
@@ -79,36 +80,37 @@ export class ContactCardComponent implements OnInit {
   }
 
   // Send file for uploading
-  testCors() {
-    this.contactCardService.getTest().subscribe(
-      res => console.log(res),
-      err => console.log(err)
-    );
-  }
   prepareForm() {
     this.sendingForm = true;
     this.sendedForm = true;
     var savedImageUrl; 
-    const upload$ = this.contactCardService.postFileUpload(this.fileUploaded.value)
-    .pipe(
-      finalize(() => {
-        this.reset();
-        this.sendForm(savedImageUrl);
+
+    if (this.fileUploaded.value !== (undefined || null || "")) {
+      const upload$ = this.contactCardService.postFileUpload(this.fileUploaded.value)
+      .pipe(
+        finalize(() => {
+          this.reset();
+          this.sendForm(savedImageUrl);
+        })
+      );
+      this.uploadSub = upload$.subscribe(event => {
+        if (event.type == HttpEventType.UploadProgress) {
+          this.uploadProgress = Math.round(100 * (event.loaded / event.total));
+        }
+        if (event.type == HttpEventType.Response) {
+          console.log(event.body.imageUrl);
+          savedImageUrl = event.body.imageUrl;
+        }
       })
-    );
-    this.uploadSub = upload$.subscribe(event => {
-      if (event.type == HttpEventType.UploadProgress) {
-        this.uploadProgress = Math.round(100 * (event.loaded / event.total));
-      }
-      if (event.type == HttpEventType.Response) {
-        console.log(event.body.imageUrl);
-        savedImageUrl = event.body.imageUrl;
-      }
-    })
+    }
+    else {
+      this.sendForm("");
+    }
   }
 
   // Send rest of the form
   sendForm(imageUrl: string) {
+    delete this.firstFormGroup.value.fileUploaded;
     const mergeForm = {
       ...this.firstFormGroup.value,
       ...this.secondFormGroup.value,
@@ -116,7 +118,7 @@ export class ContactCardComponent implements OnInit {
       imageUrl
     };
     console.log(mergeForm);
-    this.contactCardService.postForm(mergeForm).subscribe(
+    this.contactCardService.postSendEmail(mergeForm).subscribe(
       data => console.log(data),
       err => console.log(err)
     );
@@ -147,7 +149,6 @@ export class ContactCardComponent implements OnInit {
   cancelUpload() {
     this.uploadSub.unsubscribe();
     this.reset();
-    this.sendingForm = false;
   }
 
   reset() {

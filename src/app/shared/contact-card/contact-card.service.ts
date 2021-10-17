@@ -22,7 +22,7 @@ export class ContactCardService {
     });
   }
 
-  postForm(payload: Object): Observable<any> {
-    return this.http.post<any>(env.api + '/send-email', payload);
+  postSendEmail(payload: Object): Observable<any> {
+    return this.http.post<any>(env.api + '/email', payload);
   }
 }
