@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser';
+import { environment as env } from 'src/environments/environment';
 
 @Component({
   selector: 'app-dental-implants',
@@ -17,9 +19,16 @@ export class DentalImplantsComponent implements OnInit {
     "Not only do we take pride in our work, but on the quality of our equipment and materials as well. Although we’ve worked with different implants brands over the time, we mainly use Straumann and NeoDent Dental Implants, both of them from the leading brand Straumann®."
   ];
 
-  constructor() { }
+  constructor(
+    private titleService: Title,
+    private metaTagService: Meta
+  ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Baja Oral Center - Dental Implants');
+    this.metaTagService.updateTag({ name: 'og:title', content: 'Dental Implants' });
+    this.metaTagService.updateTag({ name: 'og:description', content: 'Your best option to recover a lost tooth. Replace your missing teeth with strong and durable dental implants. Regain the comfort of having a complete, healthy smile.' },);
+    this.metaTagService.updateTag({ name: 'og:image', content: env.meta_url + '/assets/img/boc-banner-implants-small.jpeg' });
   }
 
 }

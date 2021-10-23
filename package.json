@@ -37,6 +37,7 @@
     "@ngbmodule/material-carousel": "^0.7.1",
     "@types/googlemaps": "^3.36.4",
     "angular-animations": "0.0.10",
+    "angular-recaptcha3": "^2.0.0",
     "bootstrap": "^4.5.2",
     "colors": "^1.4.0",
     "dotenv": "^8.2.0",

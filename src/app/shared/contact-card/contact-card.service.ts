@@ -22,6 +22,10 @@ export class ContactCardService {
     });
   }
 
+  postVerifyReCaptcha(payload: Object): Observable<any> {
+    return this.http.post<any>(env.api + '/verify-recaptcha', payload);
+  }
+
   postSendEmail(payload: Object): Observable<any> {
     return this.http.post<any>(env.api + '/email', payload);
   }

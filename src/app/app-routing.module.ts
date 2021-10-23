@@ -32,6 +32,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { ReCaptchaModule } from 'angular-recaptcha3';
 
 import { AestheticComponent } from './services-page/aesthetic/aesthetic.component';
 import { VeneersComponent } from './services-page/veneers/veneers.component';
@@ -69,7 +70,16 @@ const routes: Routes = [
             BrowserModule, RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'}), FontAwesomeModule, MatCarouselModule.forRoot(), BrowserAnimationsModule, 
             AgmCoreModule.forRoot({apiKey: env.gmapsKey}), HttpClientModule, MatButtonModule, MatStepperModule, 
             MatCardModule, MatInputModule, MatFormFieldModule, MatIconModule, FormsModule, ReactiveFormsModule, 
-            MatSelectModule, MatDatepickerModule, MatNativeDateModule, NgxMaterialTimepickerModule, MatProgressBarModule
+            MatSelectModule, MatDatepickerModule, MatNativeDateModule, NgxMaterialTimepickerModule, MatProgressBarModule,
+            ReCaptchaModule.forRoot({
+                invisible: {
+                    sitekey: '6LcaheocAAAAAKmbtALe2uZS2uUoXA8b2cNtlIm5', 
+                },
+                normal: {
+                    sitekey: '6LcaheocAAAAAKmbtALe2uZS2uUoXA8b2cNtlIm5', 
+                },
+                language: 'en'
+            }),
           ],
   exports: [RouterModule],
   declarations: [HomeComponent, ServicesPageComponent, MiguelComponent, LupitaComponent, DanielComponent, ContactComponent, CarouselComponent,

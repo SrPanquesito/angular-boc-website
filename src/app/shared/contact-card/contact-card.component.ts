@@ -5,8 +5,9 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { Subscription } from 'rxjs';
-import { finalize } from 'rxjs/operators';
+import { finalize, catchError } from 'rxjs/operators';
 import { ContactCardService } from './contact-card.service';
+import { ReCaptchaService } from 'angular-recaptcha3';
 
 interface Service {
   value: string;
@@ -25,6 +26,7 @@ export class ContactCardComponent implements OnInit {
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
   dateMaxHour = "03:00 pm";
+  errMessage: string;
 
   services: Service[] = [
     {value: 'aesthetic', viewValue: 'Aesthetic Dentistry'},
@@ -36,7 +38,7 @@ export class ContactCardComponent implements OnInit {
     {value: 'other', viewValue: 'Other...'}
   ];
 
-  constructor(private _formBuilder: FormBuilder, private http: HttpClient, private contactCardService: ContactCardService) { }
+  constructor(private _formBuilder: FormBuilder, private http: HttpClient, private contactCardService: ContactCardService, private recaptchaService:ReCaptchaService) { }
 
   ngOnInit(): void {
     this.firstFormGroup = this._formBuilder.group({
@@ -85,27 +87,54 @@ export class ContactCardComponent implements OnInit {
     this.sendedForm = true;
     var savedImageUrl; 
 
-    if (this.fileUploaded.value !== (undefined || null || "")) {
-      const upload$ = this.contactCardService.postFileUpload(this.fileUploaded.value)
-      .pipe(
-        finalize(() => {
-          this.reset();
-          this.sendForm(savedImageUrl);
-        })
+
+    this.recaptchaService.execute({action: 'contactForm'}).then(token => {
+      // Backend verification method
+      this.contactCardService.postVerifyReCaptcha({token}).subscribe(
+        res => {
+          if (res.message.score >= 0.6 && res.message.success && res.message.action === "contactForm") {
+            // Usuario paso reCaptcha => Sigue con file upload
+            if (this.fileUploaded.value !== (undefined || null || "")) {
+              const upload$ = this.contactCardService.postFileUpload(this.fileUploaded.value)
+              .pipe(
+                finalize(() => {
+                  // Se completo la subida de archivo => Sigue con enviar el email
+                  this.reset();
+                  this.sendForm(savedImageUrl);
+                })
+              );
+              this.uploadSub = upload$.subscribe(event => {
+                if (event.type == HttpEventType.UploadProgress) {
+                  this.uploadProgress = Math.round(100 * (event.loaded / event.total));
+                }
+                if (event.type == HttpEventType.Response) {
+                  savedImageUrl = event.body.imageUrl;
+                }
+              },
+              err => {
+                this.reset();
+                this.sendedForm = false;
+                this.errMessage = err.error.message;
+              })
+            }
+            else {
+              this.sendForm("");
+            }
+          }
+          else {
+            this.sendedForm = false;
+            this.errMessage = 'reCaptcha score less than 0.6. If not a bot please contact Baja Oral Center.';
+          }
+        },
+        err => {
+          console.log(err);
+          this.sendedForm = false;
+          this.errMessage = 'reCaptcha connection with backend failed.';
+        }
       );
-      this.uploadSub = upload$.subscribe(event => {
-        if (event.type == HttpEventType.UploadProgress) {
-          this.uploadProgress = Math.round(100 * (event.loaded / event.total));
-        }
-        if (event.type == HttpEventType.Response) {
-          console.log(event.body.imageUrl);
-          savedImageUrl = event.body.imageUrl;
-        }
-      })
-    }
-    else {
-      this.sendForm("");
-    }
+    });
+    return;
+    
   }
 
   // Send rest of the form
@@ -117,9 +146,8 @@ export class ContactCardComponent implements OnInit {
       ...this.thirdFormGroup.value,
       imageUrl
     };
-    console.log(mergeForm);
     this.contactCardService.postSendEmail(mergeForm).subscribe(
-      data => console.log(data),
+      data => console.log('Form sent!'),
       err => console.log(err)
     );
   }

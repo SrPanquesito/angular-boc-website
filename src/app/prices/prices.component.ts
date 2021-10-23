@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import { Title, Meta } from '@angular/platform-browser';
+import { environment as env } from 'src/environments/environment';
 declare let gtag: Function;
 
 interface Services {
@@ -80,7 +82,11 @@ export class PricesComponent implements OnInit {
     ]
   };
 
-  constructor(public router: Router) {
+  constructor(
+    public router: Router,
+    private titleService: Title,
+    private metaTagService: Meta
+  ) {
     this.router.events.subscribe(event => {
       if(event instanceof NavigationEnd){
          gtag('config', 'UA-98422402-1', { 'page_title' : 'prices', 'page_path': event.urlAfterRedirects });
@@ -89,6 +95,10 @@ export class PricesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Baja Oral Center - Prices');
+    this.metaTagService.updateTag({ name: 'og:title', content: 'Prices' });
+    this.metaTagService.updateTag({ name: 'og:description', content: 'We diagnose, treat, and manage overall your oral healthcare. All with a common goal: to help you archieve the perfect smile you deserve.' },);
+    this.metaTagService.updateTag({ name: 'og:image', content: env.meta_url + '/assets/img/home-raw-8.png' });
   }
 
 }

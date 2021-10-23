@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser';
+import { environment as env } from 'src/environments/environment';
 
 @Component({
   selector: 'app-zirconia',
@@ -17,9 +19,16 @@ export class ZirconiaComponent implements OnInit {
     "Not only are Zirconia crowns durable and practical, but aesthetically pleasing as well. For that reason, we make each individual crown customized to your wants and needs until you’re pleased with the results. The shape, color, size and length are some of the aspects to consider when getting a new crown placed, so feel free to let us know what you’re looking for."
   ];
 
-  constructor() { }
+  constructor(
+    private titleService: Title,
+    private metaTagService: Meta
+  ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Baja Oral Center - Zirconia Crowns');
+    this.metaTagService.updateTag({ name: 'og:title', content: 'Zirconia Crowns' });
+    this.metaTagService.updateTag({ name: 'og:description', content: 'The best of two worlds, durability and aesthetics. Say goodbye to the metal frame and fragile porcelain, and gain the confidence of a functional, durable set of teeth.' },);
+    this.metaTagService.updateTag({ name: 'og:image', content: env.meta_url + '/assets/img/services/zirconia-1.png' });
   }
 
 }

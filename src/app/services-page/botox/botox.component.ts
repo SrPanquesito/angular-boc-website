@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser';
+import { environment as env } from 'src/environments/environment';
 
 @Component({
   selector: 'app-botox',
@@ -17,9 +19,16 @@ export class BotoxComponent implements OnInit {
     "If you’re aiming to get more volume on certain areas of your face, such as plump looking lips or fill deep seated wrinkles, fillings will just do the trick. Be daring to enhance your face, and give yourself a younger and refreshed look, because a beautiful smile can only go better with a charming face."
   ];
 
-  constructor() { }
+  constructor(
+    private titleService: Title,
+    private metaTagService: Meta
+  ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Baja Oral Center - Botox & Fillers');
+    this.metaTagService.updateTag({ name: 'og:title', content: 'Botox & Fillers' });
+    this.metaTagService.updateTag({ name: 'og:description', content: 'Your teeth are only the beginning. Get rid of all the unnecessary wrinkles, dare to find out what works best for you.' },);
+    this.metaTagService.updateTag({ name: 'og:image', content: env.meta_url + '/assets/img/boc-banner-botox-small.jpg' });
   }
 
 }

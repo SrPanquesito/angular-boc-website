@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser';
+import { environment as env } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root-canal',
@@ -17,9 +19,16 @@ export class RootCanalComponent implements OnInit {
     "Before opting to permanently lose a tooth, our goal is to try to save it first with any necessary treatment, since it’s always best to save your tooth whenever possible. Though in some cases the infection goes too deep that we need to extract the tooth, most of the time it is still salvageable by performing a root canal."
   ];
 
-  constructor() { }
+  constructor(
+    private titleService: Title,
+    private metaTagService: Meta
+  ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Baja Oral Center - Root Canal');
+    this.metaTagService.updateTag({ name: 'og:title', content: 'Root Canal' });
+    this.metaTagService.updateTag({ name: 'og:description', content: 'Give your tooth another chance. Don’t lose hope on that hurting tooth, relieve the pain and restore your tooth to its healthy self.' },);
+    this.metaTagService.updateTag({ name: 'og:image', content: env.meta_url + '/assets/img/boc-banner-rootcanal-small.jpg' });
   }
 
 }

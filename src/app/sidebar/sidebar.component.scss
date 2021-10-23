@@ -4,6 +4,12 @@ mat-expansion-panel * {
   transition: none !important;
 }
 
+button:focus {
+    outline: none;
+}
+.custom-button {
+    padding: 0 0.6rem !important;
+}
 hr {
     width: 80%;
     margin: 1rem 15px 1rem;
@@ -56,15 +62,15 @@ hr {
     font-size: 17px;
     color: white;
 
-    padding: 0 0.5rem;
+    padding: 0 0 0 0.5rem;
     border-left: 1px solid var(--boc-secondary);
-    margin: 0.4rem 1rem;
+    margin: 0.4rem 0;
 }
 .nav-link {
     color: var(--light-gray);
 }
 .service-link {
-    padding: 0.1rem 1rem;
+    padding: 0.1rem 0;
 }
 
 .sidebar-text {

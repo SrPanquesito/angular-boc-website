@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser';
+import { environment as env } from 'src/environments/environment';
 
 @Component({
   selector: 'app-veneers',
@@ -17,9 +19,16 @@ export class VeneersComponent implements OnInit {
     "By the nature of the veneers, a minimum grind has to be done to the front part of your teeth, so the veneers can be placed on top to achieve the bright, natural smile you desire. Although the preparation for the teeth is slightly invasive, you won’t feel the difference, most of your own tooth is preserved so you feel the sensation and function of a natural tooth, but with the aesthetically pleasing look a veneer can give you."
   ];
 
-  constructor() { }
+  constructor(
+    private titleService: Title,
+    private metaTagService: Meta
+  ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Baja Oral Center - Veneers');
+    this.metaTagService.updateTag({ name: 'og:title', content: 'Veneers' });
+    this.metaTagService.updateTag({ name: 'og:description', content: 'Show the world the best version of you. You dream it, you live it. Achieve the natural smile you\'ve always wanted and reclaim your confidence with porcelain veneers.' },);
+    this.metaTagService.updateTag({ name: 'og:image', content: env.meta_url + '/assets/img/boc-banner-veneers-small.jpeg' });
   }
 
 }

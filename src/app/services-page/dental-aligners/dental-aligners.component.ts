@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser';
+import { environment as env } from 'src/environments/environment';
 
 @Component({
   selector: 'app-dental-aligners',
@@ -17,9 +19,16 @@ export class DentalAlignersComponent implements OnInit {
     "Using traditional braces makes uncomfortable the way you eat, talk and brush your teeth on a daily basis. Aside from its clear and subtle design, you’ll be able to take your aligners off anytime so you can eat and talk normally, without the hassle of dealing with the wires and metal parts."
   ];
 
-  constructor() { }
+  constructor(
+    private titleService: Title,
+    private metaTagService: Meta
+  ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Baja Oral Center - Dental Aligners');
+    this.metaTagService.updateTag({ name: 'og:title', content: 'Dental Aligners' });
+    this.metaTagService.updateTag({ name: 'og:description', content: 'Straighten your smile in a discreet way. Forget about the uncomfortable metal wires, align your smile in a clear and discreet manner.' },);
+    this.metaTagService.updateTag({ name: 'og:image', content: env.meta_url + '/assets/img/boc-banner-dental-small.jpeg' });
   }
 
 }

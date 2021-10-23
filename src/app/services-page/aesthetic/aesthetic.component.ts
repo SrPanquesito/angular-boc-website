@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser';
+import { environment as env } from 'src/environments/environment';
 
 @Component({
   selector: 'app-aesthetic',
@@ -17,9 +19,16 @@ export class AestheticComponent implements OnInit {
     "More than improving the overall look of your smile with cosmetic treatments, Aesthetic Dentistry focuses on combining every necessary treatment to reach the main goal: a natural, practical and functional smile."
   ];
 
-  constructor() { }
+  constructor(
+    private titleService: Title,
+    private metaTagService: Meta
+  ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Baja Oral Center - Aesthetic Dentistry');
+    this.metaTagService.updateTag({ name: 'og:title', content: 'Aesthetic Dentistry' });
+    this.metaTagService.updateTag({ name: 'og:description', content: 'Where science and art merge to create your desired smile. Restore your smile with Aesthetic Dentistry, where the latest techniques and treatments are performed with one goal in mind, to create the best outcome with a functional, aesthetic and natural look.' },);
+    this.metaTagService.updateTag({ name: 'og:image', content: env.meta_url + '/assets/img/boc-banner-home-small.png' });
   }
 
 }
