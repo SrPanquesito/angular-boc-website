@@ -34,7 +34,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { ReCaptchaModule } from 'angular-recaptcha3';
 
-import { AestheticComponent } from './services-page/aesthetic/aesthetic.component';
+import { AdvancedComponent } from './services-page/advanced/advanced.component';
 import { VeneersComponent } from './services-page/veneers/veneers.component';
 import { ZirconiaComponent } from './services-page/zirconia/zirconia.component';
 import { Allon4Component } from './services-page/allon4/allon4.component';
@@ -42,6 +42,7 @@ import { DentalImplantsComponent } from './services-page/dental-implants/dental-
 import { RootCanalComponent } from './services-page/root-canal/root-canal.component';
 import { DentalAlignersComponent } from './services-page/dental-aligners/dental-aligners.component';
 import { BotoxComponent } from './services-page/botox/botox.component';
+import { CosmeticComponent } from './services-page/cosmetic/cosmetic.component';
 import { BannerComponent } from './shared/banner/banner.component';
 import { ModelComponent } from './services-page/model/model.component';
 import { PricesComponent } from './prices/prices.component';
@@ -50,7 +51,7 @@ import { PriceTableComponent } from './shared/price-table/price-table.component'
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'services', component: ServicesPageComponent},
-  {path: 'services/aesthetic', component: AestheticComponent},
+  {path: 'services/advanced-dentistry', component: AdvancedComponent},
   {path: 'services/veneers', component: VeneersComponent},
   {path: 'services/zirconia', component: ZirconiaComponent},
   {path: 'services/allon4-x', component: Allon4Component},
@@ -58,6 +59,7 @@ const routes: Routes = [
   {path: 'services/root-canal', component: RootCanalComponent},
   {path: 'services/dental-aligners', component: DentalAlignersComponent},
   {path: 'services/botox-fillers', component: BotoxComponent},
+  {path: 'services/cosmetic-dentistry', component: CosmeticComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'doctors/miguel', component: MiguelComponent},
   {path: 'doctors/lupita', component: LupitaComponent},
@@ -83,8 +85,8 @@ const routes: Routes = [
           ],
   exports: [RouterModule],
   declarations: [HomeComponent, ServicesPageComponent, MiguelComponent, LupitaComponent, DanielComponent, ContactComponent, CarouselComponent,
-    AestheticComponent, VeneersComponent, ZirconiaComponent, Allon4Component, DentalImplantsComponent, RootCanalComponent, DentalAlignersComponent, 
-    BotoxComponent, BannerComponent, ModelComponent, CardComponent, ContactCardComponent, PricesComponent, PriceTableComponent
+    AdvancedComponent, VeneersComponent, ZirconiaComponent, Allon4Component, DentalImplantsComponent, RootCanalComponent, DentalAlignersComponent, 
+    BotoxComponent, BannerComponent, ModelComponent, CardComponent, ContactCardComponent, PricesComponent, PriceTableComponent, CosmeticComponent
   ]
 })
 export class AppRoutingModule {

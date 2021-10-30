@@ -77,6 +77,7 @@ p {
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
     .example-card {
-        max-width: 320px;
+        max-width: 22vw;
+        margin: 24px auto;
     }
 }

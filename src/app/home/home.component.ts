@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 declare let gtag: Function;
 
 @Component({
@@ -19,7 +20,7 @@ export class HomeComponent implements OnInit {
     {backgroundImage: 'assets/banners/boc-banner-rootcanal-small.jpg'}
   ];
 
-  constructor(public router: Router){
+  constructor(public router: Router, private titleService: Title){
     this.router.events.subscribe(event => {
         if(event instanceof NavigationEnd){
            gtag('config', 'UA-98422402-1', { 'page_title' : 'homepage', 'page_path': event.urlAfterRedirects });
@@ -28,6 +29,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Baja Oral Center');
   }
 
 }

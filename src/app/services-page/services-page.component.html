@@ -1,10 +1,11 @@
 <app-banner 
-    [bgImageDesktop]="'assets/img/boc-banner-services.png'" 
-    [bgImageMobile]="'assets/img/boc-banner-services-small.png'" 
+    [bgImageDesktop]="'assets/banners/boc-banner-ourservices.jpeg'" 
+    [bgImageMobile]="'assets/banners/boc-banner-ourservices-small.jpeg'" 
     [titleType]="'text'" 
     [titleContent]="'Services'" 
     [subtitleHtml]="subtitleHtml"
     [buttonText]="'Make an appointment'" 
+    [showContent]="false"
 ></app-banner>
 
 <div class="d-flex justify-content-center">
@@ -12,10 +13,10 @@
             <app-card 
                 [icon]="'url(assets/icons/service-general.svg)'"
                 [image]="'assets/img/services/s-6.png'"
-                [title]="'Aesthetic dentistry'"
+                [title]="'Advanced dentistry'"
                 [subtitle]="'Shine with your smile'"
                 [text]="'It’s not just about having new teeth. Feel confident in reclaiming your bright and youthful smile!'"
-                [linkUrl]="'/services/aesthetic'"
+                [linkUrl]="'/services/advanced-dentistry'"
             ></app-card>
             <app-card 
                 [icon]="'url(assets/icons/service-cosmetic.svg)'"
@@ -27,7 +28,7 @@
             ></app-card>
             <app-card 
                 [icon]="'url(assets/icons/service-implant.svg)'"
-                [image]="'assets/img/services/s-6.png'"
+                [image]="'assets/banners/boc-banner-zirconia-small.jpeg'"
                 [title]="'Zirconia crowns'"
                 [subtitle]="'Subtitle'"
                 [text]="'The best of two worlds, durability & aesthetics; say goodbye to the metal frame and fragile porcelain.'"
@@ -72,6 +73,14 @@
                 [subtitle]="'Subtitle'"
                 [text]="'Your teeth are only the beginning.'"
                 [linkUrl]="'/services/botox-fillers'"
+            ></app-card>
+            <app-card 
+                [icon]="'url(assets/icons/service-general.svg)'"
+                [image]="'assets/img/services/s-6.png'"
+                [title]="'Cosmetic dentistry'"
+                [subtitle]="'Shine with your smile'"
+                [text]="'It’s not just about having new teeth. Feel confident in reclaiming your bright and youthful smile!'"
+                [linkUrl]="'/services/cosmetic-dentistry'"
             ></app-card>
             <div style="width: 360px;"></div>
         </div>
