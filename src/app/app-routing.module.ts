@@ -42,7 +42,7 @@ import { DentalImplantsComponent } from './services-page/dental-implants/dental-
 import { RootCanalComponent } from './services-page/root-canal/root-canal.component';
 import { DentalAlignersComponent } from './services-page/dental-aligners/dental-aligners.component';
 import { BotoxComponent } from './services-page/botox/botox.component';
-import { CosmeticComponent } from './services-page/cosmetic/cosmetic.component';
+import { StrategicImplantsComponent } from './services-page/strategic-implants/strategic-implants.component';
 import { BannerComponent } from './shared/banner/banner.component';
 import { ModelComponent } from './services-page/model/model.component';
 import { PricesComponent } from './prices/prices.component';
@@ -59,7 +59,7 @@ const routes: Routes = [
   {path: 'services/root-canal', component: RootCanalComponent},
   {path: 'services/dental-aligners', component: DentalAlignersComponent},
   {path: 'services/botox-fillers', component: BotoxComponent},
-  {path: 'services/cosmetic-dentistry', component: CosmeticComponent},
+  {path: 'services/strategic-implants', component: StrategicImplantsComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'doctors/miguel', component: MiguelComponent},
   {path: 'doctors/lupita', component: LupitaComponent},
@@ -86,7 +86,7 @@ const routes: Routes = [
   exports: [RouterModule],
   declarations: [HomeComponent, ServicesPageComponent, MiguelComponent, LupitaComponent, DanielComponent, ContactComponent, CarouselComponent,
     AdvancedComponent, VeneersComponent, ZirconiaComponent, Allon4Component, DentalImplantsComponent, RootCanalComponent, DentalAlignersComponent, 
-    BotoxComponent, BannerComponent, ModelComponent, CardComponent, ContactCardComponent, PricesComponent, PriceTableComponent, CosmeticComponent
+    BotoxComponent, BannerComponent, ModelComponent, CardComponent, ContactCardComponent, PricesComponent, PriceTableComponent, StrategicImplantsComponent
   ]
 })
 export class AppRoutingModule {
