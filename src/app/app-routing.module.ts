@@ -30,6 +30,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { ReCaptchaModule } from 'angular-recaptcha3';
@@ -47,6 +48,7 @@ import { BannerComponent } from './shared/banner/banner.component';
 import { ModelComponent } from './services-page/model/model.component';
 import { PricesComponent } from './prices/prices.component';
 import { PriceTableComponent } from './shared/price-table/price-table.component';
+import { FaqComponent } from './faq/faq.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -64,7 +66,8 @@ const routes: Routes = [
   {path: 'doctors/miguel', component: MiguelComponent},
   {path: 'doctors/lupita', component: LupitaComponent},
   {path: 'doctors/daniel', component: DanielComponent},
-  {path: 'prices', component: PricesComponent}
+  {path: 'prices', component: PricesComponent},
+  {path: 'faq', component: FaqComponent}
 ];
 
 @NgModule({
@@ -72,7 +75,7 @@ const routes: Routes = [
             BrowserModule, RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'}), FontAwesomeModule, MatCarouselModule.forRoot(), BrowserAnimationsModule, 
             AgmCoreModule.forRoot({apiKey: env.gmapsKey}), HttpClientModule, MatButtonModule, MatStepperModule, 
             MatCardModule, MatInputModule, MatFormFieldModule, MatIconModule, FormsModule, ReactiveFormsModule, 
-            MatSelectModule, MatDatepickerModule, MatNativeDateModule, NgxMaterialTimepickerModule, MatProgressBarModule,
+            MatSelectModule, MatDatepickerModule, MatNativeDateModule, NgxMaterialTimepickerModule, MatProgressBarModule, MatExpansionModule,
             ReCaptchaModule.forRoot({
                 invisible: {
                     sitekey: '6LcaheocAAAAAKmbtALe2uZS2uUoXA8b2cNtlIm5', 
@@ -86,7 +89,7 @@ const routes: Routes = [
   exports: [RouterModule],
   declarations: [HomeComponent, ServicesPageComponent, MiguelComponent, LupitaComponent, DanielComponent, ContactComponent, CarouselComponent,
     AdvancedComponent, VeneersComponent, ZirconiaComponent, Allon4Component, DentalImplantsComponent, RootCanalComponent, DentalAlignersComponent, 
-    BotoxComponent, BannerComponent, ModelComponent, CardComponent, ContactCardComponent, PricesComponent, PriceTableComponent, StrategicImplantsComponent
+    BotoxComponent, BannerComponent, ModelComponent, CardComponent, ContactCardComponent, PricesComponent, PriceTableComponent, StrategicImplantsComponent, FaqComponent
   ]
 })
 export class AppRoutingModule {
