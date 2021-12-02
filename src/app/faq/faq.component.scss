@@ -1,6 +1,13 @@
 .faq-container {
     width: 90%;
 }
+.no-border {
+    border-bottom-right-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    border-top-left-radius: 0px !important;
+    box-shadow: none;
+}
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {

@@ -1,84 +1,33 @@
 <app-banner 
-    [bgImageDesktop]="'assets/img/boc-banner-home.png'" 
-    [bgImageMobile]="'assets/img/boc-banner-home-small.png'" 
+    [bgImageDesktop]="'assets/banners/boc-banner-faq.jpeg'" 
+    [bgImageMobile]="'assets/banners/boc-banner-faq-small.jpeg'" 
     [titleType]="'text'"
     [titleContent]="'Frequently Asked Questions'"
-    [showContent]="true"
+    [showContent]="false"
 ></app-banner>
 
-<div class="d-flex flex-column mt-4" style="height: 50vh;">
+<div class="d-flex flex-column" style="margin-top: 2rem; margin-bottom: 4rem;">
     <div class="d-flex justify-content-center">
         <div class="faq-container">
-            <mat-accordion>
-                <mat-expansion-panel (opened)="panelOpenState = true"
-                                     (closed)="panelOpenState = false">
-                  <mat-expansion-panel-header>
+          
+          <!-- Various Questions -->
+            <mat-accordion *ngFor="let q of questions; index as i">
+                <mat-expansion-panel  class="no-border bg-white" 
+                                    (opened)="panelOpenState = true"
+                                    (closed)="panelOpenState = false"
+                                    [expanded]="true"
+                                    >
+                  <mat-expansion-panel-header class="bg-light-gray">
                     <mat-panel-title>
-                      Self aware panel
+                      <b class="pl-4">{{ q.title }}</b>
                     </mat-panel-title>
-                    <mat-panel-description>
-                      Currently I am {{panelOpenState ? 'open' : 'closed'}}
-                    </mat-panel-description>
                   </mat-expansion-panel-header>
-                  <p>I'm visible because I am open</p>
+                  <div class="pl-4 pt-4">
+                    <span>{{ q.text }}</span>
+                  </div>
                 </mat-expansion-panel>
               </mat-accordion>
-              <mat-accordion>
-                <mat-expansion-panel (opened)="panelOpenState = true"
-                                     (closed)="panelOpenState = false">
-                  <mat-expansion-panel-header>
-                    <mat-panel-title>
-                      Self aware panel
-                    </mat-panel-title>
-                    <mat-panel-description>
-                      Currently I am {{panelOpenState ? 'open' : 'closed'}}
-                    </mat-panel-description>
-                  </mat-expansion-panel-header>
-                  <p>I'm visible because I am open</p>
-                </mat-expansion-panel>
-              </mat-accordion>
-              <mat-accordion>
-                <mat-expansion-panel (opened)="panelOpenState = true"
-                                     (closed)="panelOpenState = false">
-                  <mat-expansion-panel-header>
-                    <mat-panel-title>
-                      Self aware panel
-                    </mat-panel-title>
-                    <mat-panel-description>
-                      Currently I am {{panelOpenState ? 'open' : 'closed'}}
-                    </mat-panel-description>
-                  </mat-expansion-panel-header>
-                  <p>I'm visible because I am open</p>
-                </mat-expansion-panel>
-              </mat-accordion>
-              <mat-accordion>
-                <mat-expansion-panel (opened)="panelOpenState = true"
-                                     (closed)="panelOpenState = false">
-                  <mat-expansion-panel-header>
-                    <mat-panel-title>
-                      Self aware panel
-                    </mat-panel-title>
-                    <mat-panel-description>
-                      Currently I am {{panelOpenState ? 'open' : 'closed'}}
-                    </mat-panel-description>
-                  </mat-expansion-panel-header>
-                  <p>I'm visible because I am open</p>
-                </mat-expansion-panel>
-              </mat-accordion>
-              <mat-accordion>
-                <mat-expansion-panel (opened)="panelOpenState = true"
-                                     (closed)="panelOpenState = false">
-                  <mat-expansion-panel-header>
-                    <mat-panel-title>
-                      Self aware panel
-                    </mat-panel-title>
-                    <mat-panel-description>
-                      Currently I am {{panelOpenState ? 'open' : 'closed'}}
-                    </mat-panel-description>
-                  </mat-expansion-panel-header>
-                  <p>I'm visible because I am open</p>
-                </mat-expansion-panel>
-              </mat-accordion>
+
         </div>
     </div>
 </div>

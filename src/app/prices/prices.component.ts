@@ -29,6 +29,7 @@ export class PricesComponent implements OnInit {
   services: Services = {
     general: [
       {name: 'Consultation with X-Rays', boc_price: '$40'},
+      {name: 'Consultation with CT-Scan', boc_price: '$120'},
       {name: 'Regular Cleanings', boc_price: '$60 - $80'},
       {name: 'Composite Filling', boc_price: '$60 - $100'},
       {name: 'Temporary partial (Flipper)', boc_price: '$60 - $100', extra: 'up to 3 Units'},

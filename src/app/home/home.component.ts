@@ -11,13 +11,15 @@ declare let gtag: Function;
 export class HomeComponent implements OnInit {
   bannersArrayDesktop: Array<any> = [
     {backgroundImage: 'assets/banners/boc-banner-home.jpeg'},
-    {backgroundImage: 'assets/banners/boc-banner-botox.jpeg'},
-    {backgroundImage: 'assets/banners/boc-banner-rootcanal.jpeg'}
+    {backgroundImage: 'assets/banners/boc-banner-allon4.jpeg'},
+    {backgroundImage: 'assets/banners/boc-banner-implants.jpeg'},
+    {backgroundImage: 'assets/banners/boc-banner-zirconia.jpeg'}
   ];
   bannersArrayMobile: Array<any> = [
     {backgroundImage: 'assets/banners/boc-banner-home-small.jpg'},
-    {backgroundImage: 'assets/banners/boc-banner-botox-small.jpg'},
-    {backgroundImage: 'assets/banners/boc-banner-rootcanal-small.jpg'}
+    {backgroundImage: 'assets/banners/boc-banner-allon4-small.jpg'},
+    {backgroundImage: 'assets/banners/boc-banner-implants-small.jpg'},
+    {backgroundImage: 'assets/banners/boc-banner-zirconia-small.jpg'}
   ];
 
   constructor(public router: Router, private titleService: Title){

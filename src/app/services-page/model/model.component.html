@@ -11,7 +11,7 @@
 <!-- Aqui va un texto estilo banner -->
 <div class="text-banner">
     <div class="d-flex flex-column justify-content-center align-items-center">
-            <h2 *ngIf="titles && titles.length > 0">{{ titles[0] }}</h2>
+            <h2 *ngIf="titles && titles.length > 0" [ngStyle]="{'font-size': (mainTitle === 'Strategic Implants') ? '1.4rem' : '2rem' }">{{ titles[0] }}</h2>
             <h2 *ngIf="!titles">It’s never too late to invest in oral health</h2>
             <hr class="w-25">
             <p class="text-center" *ngIf="texts && texts.length > 0">{{ texts[0] }}</p>

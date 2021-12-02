@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Router } from '@angular/router';
 
 import {
   Orientation
@@ -33,7 +34,7 @@ export class CarouselComponent implements OnInit {
   public useMouseWheel = false;
   public orientation: Orientation = 'ltr';
 
-  constructor(breakpointObserver: BreakpointObserver) {
+  constructor(breakpointObserver: BreakpointObserver, private router: Router) {
     breakpointObserver.observe([
       Breakpoints.HandsetLandscape,
       Breakpoints.HandsetPortrait
@@ -55,7 +56,19 @@ export class CarouselComponent implements OnInit {
     this.slides = this.slidesList.length;
   }
 
-  public onChange(index: number) {
+  public onChange(index: number) {}
+  public onClick(index: number) {
+    switch (index) {
+      case 1:
+        this.router.navigate(['/services/allon4-x']);
+        break;
+      case 2:
+        this.router.navigate(['/services/dental-implants']);
+        break;
+      case 3:
+        this.router.navigate(['/services/zirconia']);
+        break;
+    }
   }
 
 }
