@@ -17,9 +17,9 @@ export class HomeComponent implements OnInit {
   ];
   bannersArrayMobile: Array<any> = [
     {backgroundImage: 'assets/banners/boc-banner-home-small.jpg'},
-    {backgroundImage: 'assets/banners/boc-banner-allon4-small.jpg'},
-    {backgroundImage: 'assets/banners/boc-banner-implants-small.jpg'},
-    {backgroundImage: 'assets/banners/boc-banner-zirconia-small.jpg'}
+    {backgroundImage: 'assets/banners/boc-banner-allon4-small.jpeg'},
+    {backgroundImage: 'assets/banners/boc-banner-implants-small.jpeg'},
+    {backgroundImage: 'assets/banners/boc-banner-zirconia-small.jpeg'}
   ];
 
   constructor(public router: Router, private titleService: Title){

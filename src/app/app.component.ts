@@ -69,10 +69,10 @@ export class AppComponent implements OnInit {
         window.open('https://api.whatsapp.com/send?phone=16192705368', '_blank').focus();
         break;
       case 3:
-        window.open('sms:6192705368?body=Hello. I would like to make an appointment.', '_blank').focus();
+        window.open('sms:+16192705368', '_blank').focus();
         break;
       case 4:
-        window.open('tel:6192705368', '_blank').focus();
+        window.open('tel:+16192705368', '_blank').focus();
         break;
     
       default:

@@ -33,7 +33,7 @@
 
     &__features {
         border-top: 1px solid #c7b59b;
-        padding: 3rem 0;
+        padding: 6rem 0;
 
         b {
             font-size: 14px;
@@ -88,6 +88,10 @@
                 width: 70%;
                 margin: 0 auto;
             }
+        }
+        &__features {
+            border-top: 1px solid #c7b59b;
+            padding: 3rem 0;
         }
     }
 
