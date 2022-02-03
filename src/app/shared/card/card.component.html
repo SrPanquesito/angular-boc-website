@@ -1,4 +1,4 @@
-<mat-card class="example-card" (click)="openLink()">
+<mat-card [ngClass]="{'example-card-home': atHome, 'example-card': !atHome}" (click)="openLink()">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image" [ngStyle]="{'background-image': icon}"></div>
       <mat-card-title>{{ title }}</mat-card-title>

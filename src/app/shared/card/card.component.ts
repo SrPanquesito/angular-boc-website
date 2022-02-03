@@ -13,6 +13,7 @@ export class CardComponent implements OnInit {
   @Input() subtitle: string;
   @Input() text: string;
   @Input() linkUrl: string;
+  @Input() atHome: boolean;
 
   constructor(private router: Router) { }
 

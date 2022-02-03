@@ -141,6 +141,9 @@ p {
 .shinny-glass {
     position: relative;
     overflow: hidden;
+    
+    background: rgba(255,255,255,0.8);
+    transition: background 500ms ease-out;
 
     &::before {
         content: '';
@@ -157,11 +160,14 @@ p {
         transition: left 500ms ease-out;
       }
     &:hover {
+        background: rgba(255,255,255,0);
+        transition: background 500ms ease-out;
+
         &::before {
             left: 150%;
           }
         .shinny-glass-whiteout:after {
-            background: rgba(255,255,255,0.8);
+            background: rgba(255,255,255,0);
             transition: background 500ms ease-out;
         }
         img {
