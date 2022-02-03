@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute, Event, NavigationEnd } from '@angular/router';
 import { MatExpansionPanel } from '@angular/material/expansion';
 import { trigger, state, style, animate, transition, keyframes, query, animateChild } from '@angular/animations';
-import { faFacebookF, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faInstagram, faWhatsapp, faYelp } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-sidebar',
@@ -42,6 +42,7 @@ export class SidebarComponent implements OnInit {
   faFacebook = faFacebookF;
   faInstagram = faInstagram;
   faWhatsapp = faWhatsapp;
+  faYelp = faYelp;
   
   panelOpenState = false;
   menu: boolean;
