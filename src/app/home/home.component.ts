@@ -10,13 +10,13 @@ declare let gtag: Function;
 })
 export class HomeComponent implements OnInit {
   bannersArrayDesktop: Array<any> = [
-    {backgroundImage: 'assets/banners/boc-banner-home.jpeg'},
+    {backgroundImage: 'assets/banners/main.jpeg'},
     {backgroundImage: 'assets/banners/boc-banner-allon4.jpeg'},
     {backgroundImage: 'assets/banners/boc-banner-implants.jpeg'},
     {backgroundImage: 'assets/banners/boc-banner-zirconia.jpeg'}
   ];
   bannersArrayMobile: Array<any> = [
-    {backgroundImage: 'assets/banners/boc-banner-home-small.jpg'},
+    {backgroundImage: 'assets/banners/main-small.jpeg'},
     {backgroundImage: 'assets/banners/boc-banner-allon4-small.jpeg'},
     {backgroundImage: 'assets/banners/boc-banner-implants-small.jpeg'},
     {backgroundImage: 'assets/banners/boc-banner-zirconia-small.jpeg'}
