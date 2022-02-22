@@ -11,6 +11,7 @@ import { ServicesPageComponent } from './services-page/services-page.component';
 import { MiguelComponent } from './doctors/miguel/miguel.component';
 import { LupitaComponent } from './doctors/lupita/lupita.component';
 import { DanielComponent } from './doctors/daniel/daniel.component';
+import { TheTeamComponent } from './doctors/the-team/the-team.component';
 import { ContactComponent } from './contact/contact.component';
 import { CarouselComponent } from './shared/carousel/carousel.component';
 import { CardComponent } from './shared/card/card.component';
@@ -66,6 +67,7 @@ const routes: Routes = [
   {path: 'doctors/miguel', component: MiguelComponent},
   {path: 'doctors/lupita', component: LupitaComponent},
   {path: 'doctors/daniel', component: DanielComponent},
+  {path: 'the-team', component: TheTeamComponent},
   {path: 'prices', component: PricesComponent},
   {path: 'faq', component: FaqComponent}
 ];
@@ -89,7 +91,8 @@ const routes: Routes = [
   exports: [RouterModule],
   declarations: [HomeComponent, ServicesPageComponent, MiguelComponent, LupitaComponent, DanielComponent, ContactComponent, CarouselComponent,
     AdvancedComponent, VeneersComponent, ZirconiaComponent, Allon4Component, DentalImplantsComponent, RootCanalComponent, DentalAlignersComponent, 
-    BotoxComponent, BannerComponent, ModelComponent, CardComponent, ContactCardComponent, PricesComponent, PriceTableComponent, StrategicImplantsComponent, FaqComponent
+    BotoxComponent, BannerComponent, ModelComponent, CardComponent, ContactCardComponent, PricesComponent, PriceTableComponent, StrategicImplantsComponent,
+    FaqComponent, TheTeamComponent
   ]
 })
 export class AppRoutingModule {
