@@ -14,3 +14,54 @@
         margin-bottom: 4rem;
     }
 }
+
+
+.section-header {
+    padding: 4rem 0;
+
+    h3:before {
+        content: '';
+        position: absolute;
+        width: 50%;
+        border-top: 2px solid #c7b59b;
+        right: -15%;
+        margin-left: 50%;
+        margin-right: 50%;
+        margin-top: -25px;
+    }
+    h3:after {
+        content: '';
+        position: absolute;
+        width: 50%;
+        height: 50px;
+        border-bottom: 2px solid #c7b59b;
+        left: -15%;
+        margin-left: 50%;
+        margin-right: 50%;
+    }
+}
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .section-header {
+        h3 {
+            padding: 1rem 0;
+        }
+    }
+}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .section-header {
+        padding: 4rem 0;
+    
+        h3:before {
+            width: 40%;
+            right: -10%;
+        }
+        h3:after {
+            height: 60px;
+            width: 40%;
+            left: -10%;
+        }
+    }
+
+}
