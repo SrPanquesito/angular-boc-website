@@ -19,6 +19,10 @@
 .section-header {
     padding: 4rem 0;
 
+    h3 {
+        text-align: center;
+        font-size: 1.25rem;
+    }
     h3:before {
         content: '';
         position: absolute;
@@ -45,6 +49,7 @@
     .section-header {
         h3 {
             padding: 1rem 0;
+            font-size: 1.75rem;
         }
     }
 }
