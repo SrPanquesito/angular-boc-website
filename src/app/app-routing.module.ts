@@ -16,6 +16,7 @@ import { ContactComponent } from './contact/contact.component';
 import { CarouselComponent } from './shared/carousel/carousel.component';
 import { CardComponent } from './shared/card/card.component';
 import { ContactCardComponent } from './shared/contact-card/contact-card.component';
+import { CarouselSliderComponent } from './shared/carousel-slider/carousel-slider.component';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faEnvelope, faUser } from '@fortawesome/free-regular-svg-icons';
@@ -92,7 +93,7 @@ const routes: Routes = [
   declarations: [HomeComponent, ServicesPageComponent, MiguelComponent, LupitaComponent, DanielComponent, ContactComponent, CarouselComponent,
     AdvancedComponent, VeneersComponent, ZirconiaComponent, Allon4Component, DentalImplantsComponent, RootCanalComponent, DentalAlignersComponent, 
     BotoxComponent, BannerComponent, ModelComponent, CardComponent, ContactCardComponent, PricesComponent, PriceTableComponent, StrategicImplantsComponent,
-    FaqComponent, TheTeamComponent
+    FaqComponent, TheTeamComponent, CarouselSliderComponent
   ]
 })
 export class AppRoutingModule {

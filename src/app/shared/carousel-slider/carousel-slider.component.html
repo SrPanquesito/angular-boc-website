@@ -1,0 +1,28 @@
+<!-- <div class="scene">
+	<div #carousel class="carousel">
+    <div #carousel__cell *ngFor="let i of [0,1,2,3,4,5]; c as index" class="carousel__cell">{{i}}</div>
+	</div>
+</div> -->
+
+<div class="scene">
+	<div #carousel class="carousel">
+    <div #carousel__cell *ngFor="let i of imagesList; c as index" class="carousel__cell">
+        <img [src]="i.backgroundImage" alt="" style="width: 100%;">
+    </div>
+	</div>
+</div>
+
+<!-- <div *ngIf="imagesList">
+    <div *ngFor="let i of imagesList; c as index">
+        <img [src]="i.backgroundImage" alt="" style="width: 600px">
+    </div>
+</div> -->
+
+<button (click)="prev()">prev</button>
+<button (click)="next()">next</button>
+
+<!-- <div class="scene">
+    <div class="carousel2" style="position:relative">
+        <div *ngFor="let i of [0,1,2,3,4,5,6,7,8]" class="carousel__cell" [ngStyle]="getStyle(i)">{{i}}</div>
+    </div>
+</div> -->
