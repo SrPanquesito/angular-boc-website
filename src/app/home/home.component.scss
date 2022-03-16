@@ -84,6 +84,28 @@
     }
 }
 
+.swiper {
+    overflow: hidden;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    max-width: 100%;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+}
+
+.swiper-wrapper {
+    width: 100%;
+}
+
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
     #home {
@@ -104,6 +126,10 @@
             padding: 1rem 0;
             font-size: 1.75rem;
         }
+    }
+
+    .swiper-slide {
+        max-width: 50%;
     }
 }
 

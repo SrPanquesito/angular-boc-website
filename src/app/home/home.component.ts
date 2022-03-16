@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { Title } from '@angular/platform-browser';
+import Swiper, { EffectCoverflow } from 'swiper';
+
 declare let gtag: Function;
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss', '../../../node_modules/swiper/swiper-bundle.min.css']
 })
 export class HomeComponent implements OnInit {
   bannersArrayDesktop: Array<any> = [
@@ -30,6 +32,8 @@ export class HomeComponent implements OnInit {
     {backgroundImage: 'assets/banners/temp-6.jpeg'},
   ];
 
+  swiper: any;
+
   constructor(public router: Router, private titleService: Title){
     this.router.events.subscribe(event => {
         if(event instanceof NavigationEnd){
@@ -40,6 +44,27 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.titleService.setTitle('Baja Oral Center');
+
+    Swiper.use([EffectCoverflow]);
+
+    this.swiper = new Swiper('.swiper', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      initialSlide: 1,
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true
+      }
+    })
+  }
+
+  ngAfterViewInit() {
+    this.swiper.update();
   }
 
 }

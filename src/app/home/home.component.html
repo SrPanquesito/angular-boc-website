@@ -86,7 +86,14 @@
 </div> -->
 
 <div class="d-flex flex-row justify-content-center py-4">
-    <app-carousel-slider [imagesList]="carouselArrayImages" ></app-carousel-slider>
+    <!-- <app-carousel-slider [imagesList]="carouselArrayImages" ></app-carousel-slider> -->
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div *ngFor="let image of carouselArrayImages" class="swiper-slide">
+                <img [src]="image.backgroundImage" alt=""/>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="d-flex justify-content-center section-header">
