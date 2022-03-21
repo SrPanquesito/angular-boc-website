@@ -1,3 +1,6 @@
+@import "../../../node_modules/swiper/swiper";
+@import "../../../node_modules/swiper/components/effect-coverflow/effect-coverflow";
+
 #home {
     &__services {
         .service-container {
@@ -106,6 +109,33 @@
     width: 100%;
 }
 
+.swiper-buttons-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    margin-right: 20px;
+    border-radius: 3px;
+    color: white;
+    background: #4799ba;
+    border: 2px solid transparent;
+
+    &:hover {
+        color: black;
+        background: #3a6a7d;
+    }
+
+    &:focus, &:active {
+        background: #3a6a7d;
+        border: 2px solid black;
+    }
+}
+
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
     #home {
@@ -130,6 +160,10 @@
 
     .swiper-slide {
         max-width: 50%;
+    }
+
+    .swiper-buttons-wrapper {
+        display: none;
     }
 }
 
