@@ -90,12 +90,12 @@
     <div class="swiper">
         <div class="swiper-wrapper">
             <div *ngFor="let image of carouselArrayImages" class="swiper-slide">
-                <img [src]="image.backgroundImage" alt=""/>
+                <img [src]="image.backgroundImage" class="swiper-img" alt=""/>
             </div>
         </div>
         <div class="swiper-buttons-wrapper">
-            <button class="swiper-button-prev" tabindex="0">⮜</button>
-            <button class="swiper-button-next" tabindex="0">⮞</button>
+            <button class="swiper-button-prev" tabindex="0"><span><</span></button>
+            <button class="swiper-button-next" tabindex="0"><span>></span></button>
         </div>
     </div>
 </div>
@@ -265,7 +265,7 @@
         ></app-card>
         <app-card 
             [icon]="'url(assets/icons/service-implant.svg)'"
-            [image]="'assets/banners/boc-banner-allon4-small.jpeg'"
+            [image]="'assets/banners/boc-banner-allon4-small_v2.jpeg'"
             [title]="'All on 4 - X'"
             [subtitle]="'Feel confident again'"
             [text]="'Secure the way you talk and eat, forget about that insecurity that gives you loose dentures.'"
