@@ -90,13 +90,13 @@
 .swiper {
     overflow: hidden;
     width: 100%;
-    padding-top: 50px;
+    padding-top: 0px;
     padding-bottom: 50px;
 }
 
 .swiper-img {
     object-fit: cover;
-    height: 280px;
+    height: 160px;
 }
 
 .swiper-slide {
@@ -166,6 +166,18 @@
             padding: 1rem 0;
             font-size: 1.75rem;
         }
+    }
+
+    .swiper {
+        overflow: hidden;
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .swiper-img {
+        object-fit: cover;
+        height: 280px;
     }
 
     .swiper-slide {
